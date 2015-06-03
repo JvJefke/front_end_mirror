@@ -58,7 +58,7 @@
         local.addFixedToConf = function (conf) {
             //console.log(conf);
             for (index in conf.value) {
-                conf.value[index].Apps.push({ "ID": 0, "pTop": "300px", "pLeft": "0px", "Name": "recorder" });
+                conf.value[index].Apps.push({ "ID": 0, "pTop": "300px", "pLeft": "0px", "Name": "recorder", "Theme": "Theme1" });
             }
             //console.log("new conf", conf);
             return conf;

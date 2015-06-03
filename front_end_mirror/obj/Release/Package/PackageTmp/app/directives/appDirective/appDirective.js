@@ -13,19 +13,20 @@
 
                 element.css('top', scope.app.pTop);
                 element.css('left', scope.app.pLeft);
+
                 if (scope.app.Data)
                     scope.app.Data = JSON.parse(scope.app.Data);
+
                 var name = scope.app.Name.toLowerCase();
-                scope.app.appSrc = "./app/apps/" + name + "/" + name + ".html";
+                var theme = scope.app.Theme.toLowerCase();
+                console.log("theme: ", theme);
+
+                scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + ".html";
 
                 scope.$watch('app.pTop', function (nv) {
-                    //console.log("renewing pTop ...");
                     element.css('top', nv);
                 });
-
                 scope.$watch('app.pLeft', function (nv) {
-                    //console.log("renewing pLeft ...");
-                    //console.log(nv);
                     element.css('left', nv);
                 });
 

@@ -1,0 +1,15 @@
+﻿<link rel="stylesheet" type="text/css" href="./app/apps/quoteoftheday/theme1/qod.css">
+
+<div class="qod" ng-app="mirrorApp" ng-controller="qodCtrl">
+    <div class="qod_title">
+        <div>Quote of the day!</div>
+    </div>
+    <div class="qod_content">
+        <div class="qoute" ng-bind="qod"></div>
+        <div class="author" ng-bind="'-- ' + author + ' --'"></div>
+    </div>
+    
+</div>
+
+<script src="./app/apps/quoteoftheday/qodService.js"></script>
+<script src="./app/apps/quoteoftheday/qodCtrl.js"></script>
