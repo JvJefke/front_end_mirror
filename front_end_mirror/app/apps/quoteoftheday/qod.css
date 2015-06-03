@@ -1,0 +1,27 @@
+﻿.qod{
+    width: 380px;
+    height: 159px;
+    overflow: hidden;
+    text-align: center;
+}
+.qod_content>div:first-child{
+    font-style: normal;
+    width: 100%
+}
+.qod_contents>div:last-child{
+    font-style: italic;
+    width: 100%;
+}
+.qod_title{
+    width: 100%;
+    float: left;
+    margin: auto;
+    text-align: center;
+}
+.qod_title>div{
+    display: inline-block;
+    margin: 0px auto 10px auto;
+    font-size: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}

@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="./app/apps/calendar/calendar.css">
+
+<div class="calendar" ng-app="mirrorApp" ng-controller="calendarCtrl">
+    <div class="calendar_day" ng-repeat="item in items">
+        <div class="calendar_header">
+            <div class="calendar_header_content">
+                <div ng-bind="item.catDate | date : 'dd'"></div>
+                <div ng-bind="item.catDate | date : 'MMMM'"></div>
+            </div>
+        </div>
+        <div class="calendar_content">
+            <div ng-repeat="i in item.items">
+                <div ng-bind="i.summary"></div>
+                <div>
+                    <div ng-bind="i.start.dateTime | date : 'HH:mm'"></div>
+                    <div>&nbsp;-&nbsp;</div>
+                    <div ng-bind="i.end.dateTime | date : 'HH:mm'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./app/apps/calendar/calendarService.js"></script>
+<script src="./app/apps/calendar/calendarCtrl.js"></script>

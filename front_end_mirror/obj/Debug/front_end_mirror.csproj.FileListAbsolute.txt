@@ -1,0 +1,6 @@
+C:\Users\Jeroen\documents\visual studio 2013\Projects\front_end_mirror\front_end_mirror\bin\front_end_mirror.dll.config
+C:\Users\Jeroen\documents\visual studio 2013\Projects\front_end_mirror\front_end_mirror\bin\front_end_mirror.dll
+C:\Users\Jeroen\documents\visual studio 2013\Projects\front_end_mirror\front_end_mirror\bin\front_end_mirror.pdb
+C:\Users\Jeroen\documents\visual studio 2013\Projects\front_end_mirror\front_end_mirror\obj\Debug\front_end_mirror.dll
+C:\Users\Jeroen\documents\visual studio 2013\Projects\front_end_mirror\front_end_mirror\obj\Debug\front_end_mirror.pdb
+C:\Users\Jeroen\documents\visual studio 2013\Projects\front_end_mirror\front_end_mirror\obj\Debug\front_end_mirror.csprojResolveAssemblyReference.cache

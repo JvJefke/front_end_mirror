@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <title></title>
+</head>
+<body ng-app="mirrorApp" ng-controller="mirror" ng-keyup="keyUpEvent($event)">
+    <div class="splash" ng-show="loader">
+        <div>LOADING</div>
+    </div>
+    <div id="container" ng-cloak="">
+        <data-my-app ng-show="showAll" ng-repeat="app in apps" data-app="app" data-apps="Apps"></data-my-app>
+    </div>
+    <!--<form ng-controller="linuxController" style="position:absolute; margin-top:-50px">
+        <input type="text" id="Text" ng-model="linuxInputData" my-linux-input-directive on-blur="linuxInputBlur" focus="linuxInputFocus" ng-keyup="submitLinuxData($event)"/>
+    </form>-->
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/microphone.min.js"></script>
+    <script src="https://apis.google.com/js/client.js"></script>
+    <script src="./js/underscore-min.js"></script>
+    <script src="./js/angular.js"></script>
+    <script src="./js/angular-route.min.js"></script>
+    <script src="./js/lodash.js"></script>
+    <script src="./js/angular-google-maps.min.js"></script>
+    <script src="./js/ng-map.min.js"></script>
+    <script src="./app/app.js"></script>
+    <script src="./js/jquery.feedToJSON.js"></script>
+    <script src="./app/services/libs/keyLib.js"></script>
+    <script src="./app/services/libs/tempConfLib.js"></script>
+    <script src="./app/services/dataService.js"></script>
+    <script src="./app/services/authService.js"></script>
+    <script src="./app/services/confService.js"></script>
+    <script src="./app/services/speechService.js"></script>
+    <script src="./app/services/mainFormatService.js"></script>
+    <script src="./app/services/talkService.js"></script>
+    <script src="./app/services/keyService.js"></script>
+    <script src="./app/directives/errSrcDirective/errSrcDirective.js"></script>
+    <script src="./app/directives/wind_humidityDirective/wind_humidityDirective.js"></script>
+    <script src="./app/directives/appDirective/appDirective.js"></script>
+    <script src="./app/directives/tempDirective/tempDirective.js"></script>
+    <script src="./js/loadCSS.js"></script>
+</body>
+</html>

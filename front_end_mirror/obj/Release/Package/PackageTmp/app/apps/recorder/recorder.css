@@ -1,0 +1,9 @@
+.recorder>img{
+    width: 50px;
+    height: auto;
+    margin: auto;
+}
+.recorder{
+    width: 1920px;
+    text-align: center;
+}

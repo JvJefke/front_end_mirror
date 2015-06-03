@@ -1,0 +1,334 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{293EB920-A076-4F59-9D24-7FAB817D5AD8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>front_end_mirror</RootNamespace>
+    <AssemblyName>front_end_mirror</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\apps\news\newsImgDirective\my-img.html" />
+    <Content Include="app\apps\news\newsImgDirective\newsImgDirective.js" />
+    <Content Include="app\apps\quoteoftheday\qod.css" />
+    <Content Include="app\apps\quoteoftheday\quoteoftheday.html" />
+    <Content Include="app\apps\quoteoftheday\qodCtrl.js" />
+    <Content Include="app\apps\quoteoftheday\qodService.js" />
+    <Content Include="app\apps\traffic\my-traffic.html" />
+    <Content Include="app\apps\traffic\traffic.css" />
+    <Content Include="app\apps\traffic\traffic.html" />
+    <Content Include="app\apps\traffic\trafficDirective.js" />
+    <Content Include="app\apps\traffic\trafficCtrl.js" />
+    <Content Include="app\apps\traffic\trafficService.js" />
+    <Content Include="app\apps\weather\weatherLineDirective\weatherLineDirective.js" />
+    <Content Include="app\directives\errSrcDirective\errSrcDirective.js" />
+    <Content Include="app\services\authService.js" />
+    <Content Include="app\services\libs\keyLib.js" />
+    <Content Include="app\services\libs\styleLib.js" />
+    <Content Include="app\services\libs\tempConfLib.js" />
+    <Content Include="img\ajax-loader.gif" />
+    <Content Include="img\logo_black.jpg" />
+    <Content Include="img\logo_black_transparent.jpg" />
+    <Content Include="js\angular-google-maps.min.js" />
+    <Content Include="js\angular.min.js.map" />
+    <Content Include="js\audioplayer.js" />
+    <Content Include="js\lodash.js" />
+    <Content Include="js\ng-map.min.js" />
+    <Content Include="js\ocLazyLoad.min.js.map" />
+    <Content Include="js\soundmanager2-jsmin.js" />
+    <Content Include="js\speak-js-master\speak-js-master\demo.html" />
+    <Content Include="js\speak-js-master\speak-js-master\License.txt" />
+    <Content Include="js\speak-js-master\speak-js-master\speakClient.js" />
+    <Content Include="js\speak-js-master\speak-js-master\speakGenerator.js" />
+    <Content Include="js\speak-js-master\speak-js-master\speakWorker.js" />
+    <Content Include="js\underscore-min.js" />
+    <Content Include="style\fonts\contb.ttf" />
+    <Content Include="style\fonts\contl.ttf" />
+    <Content Include="style\fonts\contm.ttf" />
+    <Content Include="js\angular-route.min.js.map" />
+    <Content Include="js\speak-js-master\speak-js-master\.gitignore" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\croak" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\f1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\f2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\f3" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\f4" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\f5" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\klatt" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\klatt2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\klatt3" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\m1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\m2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\m3" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\m4" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\m5" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\m6" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\m7" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\whisper" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\!v\whisperf" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\af" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\bs" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\ca" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\cs" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\cy" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\da" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\de" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\default" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\el" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\en\en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\en\en-n" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\en\en-rp" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\en\en-sc" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\en\en-us" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\en\en-wi" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\en\en-wm" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\eo" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\es" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\es-la" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\fi" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\fr" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\fr-be" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\hi" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\hr" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\hu" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\hy" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\hy-west" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\id" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\is" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\it" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\ka" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\kn" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\ku" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\la" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\lv" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-af1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-af1-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-br1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-br3" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-br4" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-cr1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-cz2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de4" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de4-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de5" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de5-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de6" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de6-grc" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-de7" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-en1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-es1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-es2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-fr1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-fr1-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-fr4" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-fr4-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-gr2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-gr2-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-hu1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-hu1-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-ic1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-id1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-it3" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-it4" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-la1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-nl2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-nl2-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-pl1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-pl1-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-pt1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-ro1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-ro1-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-sw1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-sw1-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-sw2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-sw2-en" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-tr1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-tr2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-us1" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-us2" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mb\mb-us3" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\mk" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\ml" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\nl" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\no" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\pl" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\pt" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\pt-pt" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\ro" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\ru" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\sk" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\sq" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\sr" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\sv" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\sw" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\ta" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\tr" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\vi" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\zh" />
+    <Content Include="js\speak-js-master\speak-js-master\espeak-data\voices\zh-yue" />
+    <Content Include="js\speak-js-master\speak-js-master\README.markdown" />
+    <None Include="Properties\PublishProfiles\mirrormirrormate.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\apps\calendar\calendar.css" />
+    <Content Include="app\apps\calendar\calendar.html" />
+    <Content Include="app\apps\calendar\calendarCtrl.js" />
+    <Content Include="app\apps\calendar\calendarService.js" />
+    <Content Include="app\apps\compliment\compliment.css" />
+    <Content Include="app\apps\compliment\compliment.html" />
+    <Content Include="app\apps\compliment\complimentCtrl.js" />
+    <Content Include="app\apps\compliment\complimentService.js" />
+    <Content Include="app\apps\news\news.css" />
+    <Content Include="app\apps\news\news.html" />
+    <Content Include="app\apps\news\newsCtrl.js" />
+    <Content Include="app\apps\news\newsService.js" />
+    <Content Include="app\apps\recorder\recorder.css" />
+    <Content Include="app\apps\recorder\recorder.html" />
+    <Content Include="app\apps\recorder\recorderCtrl.js" />
+    <Content Include="app\apps\reminders\reminders.css" />
+    <Content Include="app\apps\reminders\reminders.html" />
+    <Content Include="app\apps\reminders\remindersCtrl.js" />
+    <Content Include="app\apps\timer\timer.css" />
+    <Content Include="app\apps\timer\timer.html" />
+    <Content Include="app\apps\timer\timerCtrl.js" />
+    <Content Include="app\apps\timer\timerService.js" />
+    <Content Include="app\apps\time\my-sec.html" />
+    <Content Include="app\apps\time\secDirective.js" />
+    <Content Include="app\apps\time\time.css" />
+    <Content Include="app\apps\time\time.html" />
+    <Content Include="app\apps\time\timeCtrl.js" />
+    <Content Include="app\apps\weather\weather.css" />
+    <Content Include="app\apps\weather\weather.html" />
+    <Content Include="app\apps\weather\weatherCtrl.js" />
+    <Content Include="app\apps\weather\weatherService.js" />
+    <Content Include="app\directives\appDirective\appDirective.js" />
+    <Content Include="app\directives\appDirective\my-app.html" />
+    <Content Include="app\directives\tempDirective\my-temp.html" />
+    <Content Include="app\directives\tempDirective\tempDirective.js" />
+    <Content Include="app\directives\wind_humidityDirective\my-wind_hum.html" />
+    <Content Include="app\directives\wind_humidityDirective\wind_humidityDirective.js" />
+    <Content Include="app\services\confService.js" />
+    <Content Include="app\services\dataService.js" />
+    <Content Include="app\services\keyService.js" />
+    <Content Include="app\services\mainFormatService.js" />
+    <Content Include="app\services\speechService.js" />
+    <Content Include="app\services\talkService.js" />
+    <Content Include="img\news_icon.png" />
+    <Content Include="img\recorder.png" />
+    <Content Include="img\round_clock_turner_sec.svg" />
+    <Content Include="img\weather_icons\broken_clouds.svg" />
+    <Content Include="img\weather_icons\clear.svg" />
+    <Content Include="img\weather_icons\few_clouds.svg" />
+    <Content Include="img\weather_icons\mist.svg" />
+    <Content Include="img\weather_icons\rain.svg" />
+    <Content Include="img\weather_icons\scattered_clouds.svg" />
+    <Content Include="img\weather_icons\shower_rain.svg" />
+    <Content Include="img\weather_icons\snow.svg" />
+    <Content Include="img\weather_icons\thunderstorm.svg" />
+    <Content Include="index.html" />
+    <Content Include="js\angular-css-min.js" />
+    <Content Include="js\angular-route.min.js" />
+    <Content Include="js\angular.js" />
+    <Content Include="js\angular.min.js" />
+    <Content Include="js\jquery-1.11.2.min.js" />
+    <Content Include="js\jquery.feedToJSON.js" />
+    <Content Include="js\loadCSS.js" />
+    <Content Include="js\microphone.min.js" />
+    <Content Include="js\ocLazyLoad.min.js" />
+    <Content Include="style\style.css" />
+    <Content Include="test.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19103</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:19103/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

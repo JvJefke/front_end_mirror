@@ -1,0 +1,16 @@
+﻿.traffic{
+    width:380px;
+    height:264px;
+    border:1px solid white;
+    overflow:hidden;
+}
+.traffic>ui-gmap-google-map{
+    width:400px;
+    height:200px!important;
+}
+.angular-google-map-container{
+    height:200px;
+}
+.hide{
+    visibility:hidden;
+}
