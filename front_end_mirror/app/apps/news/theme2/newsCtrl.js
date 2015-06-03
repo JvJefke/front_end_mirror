@@ -9,6 +9,8 @@
         var counter = aantal;
         var newsTimer;
 
+        console.log($scope.app);
+
         var changeNews = function () {
             //console.log("counter: ", counter);
             //console.log("aantal: ", aantal);
@@ -30,9 +32,11 @@
         };
 
         var newsCallback = function (data) {
+            console.log(data);
             //console.log("callback");
             $scope.newsItems = data.item;
             $scope.showedNewsItems = newsService.getShowNewsItems(0, aantal, $scope.newsItems);
+            $scope.$apply();
 
             clearInterval(newsTimer);
             newsTimer = setInterval(changeNews, 10000);
@@ -44,7 +48,9 @@
         };
 
         var getNews = function () {
-            newsService.getNews($scope.app.Data.URL, newsCallback, failCallback);
+            console.log("getNews");
+            if($scope.app.Data.URL)
+                newsService.getNews($scope.app.Data.URL, newsCallback, failCallback);
         };
 
         $scope.update.func = function (app) {

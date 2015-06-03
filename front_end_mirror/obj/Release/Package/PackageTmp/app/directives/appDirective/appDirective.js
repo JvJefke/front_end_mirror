@@ -19,7 +19,6 @@
 
                 var name = scope.app.Name.toLowerCase();
                 var theme = scope.app.Theme.toLowerCase();
-                console.log("theme: ", theme);
 
                 scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + ".html";
 

@@ -57,13 +57,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\apps\news\news.html" />
-    <Content Include="app\apps\news\theme2\news1.css" />
-    <Content Include="app\apps\news\theme2\news1.html" />
-    <Content Include="app\apps\news\theme2\news0.css" />
-    <Content Include="app\apps\news\theme2\news0.html" />
+    <Content Include="app\apps\news\theme1\newsScrollDirective\newsScrollDirective.js" />
     <Content Include="app\apps\news\theme1\news1.css" />
     <Content Include="app\apps\news\theme1\news1.html" />
+    <Content Include="app\apps\news\theme1\news0.css" />
+    <Content Include="app\apps\news\theme1\news.html" />
+    <Content Include="app\apps\news\theme2\news1.css" />
+    <Content Include="app\apps\news\theme2\news1.html" />
     <Content Include="app\apps\news\newsImgDirective\my-img.html" />
     <Content Include="app\apps\news\newsImgDirective\newsImgDirective.js" />
     <Content Include="app\apps\news\theme2\newsCtrl.js" />
@@ -242,8 +242,8 @@
     <Content Include="app\apps\compliment\theme1\compliment.html" />
     <Content Include="app\apps\compliment\complimentCtrl.js" />
     <Content Include="app\apps\compliment\complimentService.js" />
-    <Content Include="app\apps\news\theme1\news0.css" />
-    <Content Include="app\apps\news\theme1\news.html" />
+    <Content Include="app\apps\news\theme2\news0.css" />
+    <Content Include="app\apps\news\theme2\news.html" />
     <Content Include="app\apps\news\theme1\newsCtrl.js" />
     <Content Include="app\apps\news\newsService.js" />
     <Content Include="app\apps\recorder\theme1\recorder.css" />
