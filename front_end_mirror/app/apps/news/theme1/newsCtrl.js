@@ -13,6 +13,9 @@
         var newsCallback = function (data) {
             $scope.newsItems = data.item;
             $scope.columns = newsService.splitNewsInColumns(data, aantalColummns);
+            $scope.scrollInterval = -1;
+            $scope.$apply();
+            $scope.scrollInterval = 10000;
         };
 
         var failCallback = function () {
@@ -30,10 +33,7 @@
             //console.log(newData);
             if (!(app.Data === JSON.stringify($scope.app.Data))) {
                 $scope.app.Data.URL = newData.URL;
-                clearInterval(newsTimer);
-                $scope.scrollInterval = -1;
-                $scope.$apply();
-                $scope.scrollInterval = 10000;
+                clearInterval(newsTimer);                
                 getNews();
             }
         }

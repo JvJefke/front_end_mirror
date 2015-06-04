@@ -19,6 +19,9 @@
                     if (scope.interval > 1) {
                         timer = setInterval(function () {
 
+                            //elHeight = parseInt(getComputedStyle(element[0].parentNode).getPropertyValue("height").slice(0, -2));
+                            //totalHeight = parseInt(getComputedStyle(element[0].querySelector(".news_column")).getPropertyValue("height").slice(0, -2));
+
                             elHeight = parseInt(getComputedStyle(element[0].parentNode).getPropertyValue("height").slice(0, -2));
                             totalHeight = parseInt(getComputedStyle(element[0].querySelector(".news_column")).getPropertyValue("height").slice(0, -2));
 
@@ -28,8 +31,13 @@
                                 scrollHeight = 0;
 
                             console.log(scrollHeight);
+                            console.log(totalHeight);
 
-                            $(element).animate({ scrollTop: scrollHeight });
+                            //$(element).animate({ scrollTop: scrollHeight });
+                            $(element[0].querySelectorAll(".news_column")).css({
+                                "margin-top": - scrollHeight + "px",
+                                "transition": "1s ease-in-out"
+                            })
 
                         }, scope.interval);
                     }

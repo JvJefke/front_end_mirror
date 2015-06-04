@@ -71,6 +71,10 @@
     <Content Include="app\apps\quoteoftheday\theme1\quoteoftheday.html" />
     <Content Include="app\apps\quoteoftheday\qodCtrl.js" />
     <Content Include="app\apps\quoteoftheday\qodService.js" />
+    <Content Include="app\apps\time\theme2\my-sec.html" />
+    <Content Include="app\apps\time\theme2\secDirective.js" />
+    <Content Include="app\apps\time\theme2\time.css" />
+    <Content Include="app\apps\time\theme2\time.html" />
     <Content Include="app\apps\traffic\my-traffic.html" />
     <Content Include="app\apps\traffic\theme1\traffic.css" />
     <Content Include="app\apps\traffic\theme1\traffic.html" />
