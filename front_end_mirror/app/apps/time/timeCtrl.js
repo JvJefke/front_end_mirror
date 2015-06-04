@@ -5,6 +5,9 @@
         function changeTime() {
             offset = (new Date().getTimezoneOffset() / 60);
             $scope.time = (new Date().setHours(new Date().getHours() + offset + $scope.app.Data.Offset));
+            if (!$scope.$$phase) {
+                $scope.$apply();
+            }
         };
 
         var timeInterval = setInterval(changeTime, 1000);

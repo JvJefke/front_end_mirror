@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="./app/apps/time/theme1/time.css">
+
+<div class="time" ng-app="mirrorApp" ng-controller="timeCtrl">
+    <div class="time_left">
+        <div class="time_date time_els" ng-bind="time | date : 'dd MMM'"></div>
+    </div>
+    <div class="time_right">
+        <div class="time_time time_els" ng-bind="time | date : 'HH:mm:ss'"></div>
+        <div class="time_date time_els" ng-bind="time | date : 'EEEE'"></div>
+    </div>    
+</div>
+
+<script src="./app/apps/time/timeCtrl.js"></script>

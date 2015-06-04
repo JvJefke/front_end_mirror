@@ -2,7 +2,8 @@
     angular.module("mirrorApp").directive('myAutomaticScroll', ["dataService", function (dataService) {
         return {
             scope:{
-                interval: "=myAutomaticScroll"
+                interval: "=myAutomaticScroll",
+                func: "=refreshFunc"
             },
             restrict: 'As',
             link: function (scope, element, attrs) {
@@ -27,8 +28,15 @@
 
                             scrollHeight += elHeight * 0.7;                           
 
-                            if (scrollHeight > totalHeight)
-                                scrollHeight = 0;
+                            if (scrollHeight > totalHeight - 40) {
+                                if (scope.func && typeof (scope.func) == "function") {
+                                    scope.func();
+                                    clearInterval(timer);
+                                    return;
+                                } else {
+                                    scrollHeight = -15;
+                                }                               
+                            }
 
                             console.log(scrollHeight);
                             console.log(totalHeight);
