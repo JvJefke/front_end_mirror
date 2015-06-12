@@ -57,7 +57,7 @@
 
         $scope.update.func = function (app) {
             var newData = JSON.parse(app.Data);
-            //console.log(newData);
+
             if (!(app.Data === JSON.stringify($scope.app.Data))) {
                 $scope.app.Data = newData;
                 clearInterval(newsTimer);

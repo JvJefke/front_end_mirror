@@ -4,16 +4,16 @@
     overflow:hidden;    
     border-left: 1px solid white;
 }
-.news_els_container{
+.news .news_els_container{
     width: 100%;
 }
-.news_scroll_container{
+.news .news_scroll_container{
     display: block;
     height: 100%;
     width: 100%;
     z-index: 1;
 }
-.news_column{
+.news .news_column{
     overflow-x: auto;
     white-space: nowrap;
     overflow-y: hidden;
@@ -23,10 +23,10 @@
     margin-top:-40px;
 
 }
-.news_column:first-child{
+.news .news_column:first-child{
     margin-top:0;
 }
-.news_container{
+.news .news_container{
     display: inline-block;
     background-color: white;
     color: black;
@@ -38,14 +38,14 @@
     z-index: 1;
     margin-bottom: 15px;
 }
-.news_container:first-child{
+.news .news_container:first-child{
     margin-left: 0px;
 }
-.news_img{
+.news .news_img{
     float: left;
     width: 190px;
 }
-.news_title{
+.news .news_title{
     float: left;
     width: 190px;
     height: 100%;
@@ -54,24 +54,24 @@
     overflow: hidden;
     margin-left: 15px;
 }
-.fade{
+.news .fade{
     float:left;
     height: 100%;
     width: 15px;
     z-index: 2;
 }
-#fade_bottom{
+.news #fade_bottom{
     float:left;
     background:-webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);    
     background-image: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
     margin-top: -15px;
 }
-#fade_top{
+.news #fade_top{
     position:relative;
     background:-webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     background-image: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
-.news_header_content{
+.news .news_header_content{
     background-color: white;
     color:black;
     float: left;
@@ -80,16 +80,16 @@
     margin-top: 0px;
     margin-left: 20px;
 }
-.news_header_content>img{
+.news .news_header_content>img{
     width: 50px;
     height: auto;
     margin-top: 13px;
     margin-left: 26px;
 }
-.news_header_content>div{
+.news .news_header_content>div{
     text-align: center;
 }
-.news_header{
+.news .news_header{
     position:relative;
     width: 100px;
     height: 100%;

@@ -2,7 +2,7 @@
     angular.module('mirrorApp').directive('mySec', [function () {
         return {
             restrict: 'E',
-            templateUrl: "./app/apps/time/theme2/my-sec.html",
+            templateUrl: "./app/apps/time/theme1/my-sec.html",
             link: function (scope, element) {
                 var turner = setInterval(function () {
                     //console.log("turn");

@@ -4,10 +4,10 @@
     overflow:hidden;    
     border-top: 1px solid white;
 }
-.news_els_container{
+.news .news_els_container{
     height: 100%;
 }
-.news_scroll_container{
+.news .news_scroll_container{
     /*float:left;*/
     display:block;
     overflow-y:auto;
@@ -16,20 +16,20 @@
     z-index:1;    
     margin-top: -15px;
 }
-.news_column{
+.news .news_column{
     float:left;
     width: 212.5px;
     overflow-x: hidden;
     margin:15px 7.5px;
     z-index:1;
 }
-.news_column:last-child{
+.news .news_column:last-child{
     margin-right: 10px;
 }
-.new_column:first-child{
+.news .new_column:first-child{
     margin-left: 10px;
 }
-.news_container{
+.news .news_container{
     background-color: white;
     color:black;
     height: auto;
@@ -39,32 +39,32 @@
     height: auto;
     z-index:1;
 }
-.news_img{
+.news .news_img{
     width:190px;
     margin-bottom: 5px;
 }
-.news_title{
+.news .news_title{
     width: 190px;
     text-align:center;
     overflow-wrap:break-word;
 }
-.fade{    
+.news .fade{    
     width: 100%;
     height: 15px;
     z-index: 2;
 }
-#fade_bottom{    
+.news #fade_bottom{    
     float:left;
     background:-webkit-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);    
     background-image: -moz-linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
     margin-top: -15px;
 }
-#fade_top{
+.news #fade_top{
     position:relative;
     background:-webkit-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     background-image: -moz-linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
-.news_header_content{
+.news .news_header_content{
     background-color: white;
     color:black;
     float: left;
@@ -73,16 +73,16 @@
     margin-top: 0px;
     margin-left: 20px;
 }
-.news_header_content>img{
+.news .news_header_content>img{
     width: 50px;
     height: auto;
     margin-top: 13px;
     margin-left: 26px;
 }
-.news_header_content>div{
+.news .news_header_content>div{
     text-align: center;
 }
-.news_header{
+.news .news_header{
     position:relative;
     width: 100px;
     height: 100%;

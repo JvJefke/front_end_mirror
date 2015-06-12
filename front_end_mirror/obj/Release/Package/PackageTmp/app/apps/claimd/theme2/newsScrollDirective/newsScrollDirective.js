@@ -1,11 +1,11 @@
 ﻿(function () {
-    angular.module("mirrorApp").directive('myAutomaticScroll', ["dataService", function (dataService) {
+    angular.module("mirrorApp").directive('myAutomaticClaimdScroll', ["dataService", function (dataService) {
         return {
             scope:{
-                interval: "=myAutomaticScroll",
+                interval: "=myAutomaticClaimdScroll",
                 func: "=refreshFunc"
             },
-            restrict: 'As',
+            restrict: 'A',
             link: function (scope, element, attrs) {
                 var scrollHeight;
                 var totalHeight;
@@ -16,12 +16,15 @@
                     clearInterval(timer);
                     $(element).animate({ scrollTop: 0 });
                     scrollHeight = 0;
-
+                    console.log(scope.interval);
                     if (scope.interval > 1) {
                         timer = setInterval(function () {
 
                             elHeight = parseInt(getComputedStyle(element[0].parentNode).getPropertyValue("height").slice(0, -2));
                             totalHeight = parseInt(getComputedStyle(element[0].querySelector(".news_column")).getPropertyValue("height").slice(0, -2));
+
+                            console.log(elHeight);
+                            console.log(totalHeight);
 
                             scrollHeight += elHeight * 0.7;                           
 

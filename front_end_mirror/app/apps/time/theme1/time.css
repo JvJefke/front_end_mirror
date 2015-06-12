@@ -1,26 +1,26 @@
-.time_ring{
+.time1 .time_ring{
     width: 250px;
     height: auto;
     margin-top: -165px;
 }
 
-.time_els{
+.time1 .time_els{
     width: 250px;
     text-align: center;
 }
 
-.time_time{
+.time1 .time_time{
     margin-top: 90px;
     font-size: 50px;
 }
-.time_date{
+.time1 .time_date{
     font-size: 18px;
 }
-.time{
+.time1{
     width: 380px;
     height: 265px;
 }
-.time_inner{
+.time1 .time_inner{
     margin-top:3px;
     float:left;
     margin-left:65px;

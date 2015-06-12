@@ -3,7 +3,7 @@
         var local = {};
         var service = {
             getConf: getConf,
-            changeLocation: changeLocation,
+            changeVals: changeVals,
             getAppByName: getAppByName
         };
 

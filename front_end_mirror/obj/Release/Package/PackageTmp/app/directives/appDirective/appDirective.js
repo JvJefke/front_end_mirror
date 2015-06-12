@@ -9,7 +9,7 @@
             templateUrl: "./app/directives/appDirective/my-app.html",
             link: function (scope, element) {
 
-                //console.log(scope.app);
+                console.log(scope.app);
 
                 scope.update = {};
                 scope.update.func = function () {}
@@ -31,6 +31,14 @@
                 });
                 scope.$watch('app.pLeft', function (nv) {
                     element.css('left', nv);
+                });
+                scope.$watch('app.Theme', function (nv) {
+                    theme = nv;
+                    scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + orientation + ".html";
+                });
+                scope.$watch('app.Orientation', function (nv) {
+                    orientation = nv;
+                    scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + orientation + ".html";
                 });
 
                 scope.$on("update", function (event, data) {
