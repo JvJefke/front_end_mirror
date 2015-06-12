@@ -18,17 +18,17 @@
                 counter = 0;
 
             if (authService.getToken()) {
-                if (!counter)
-                    console.log("Token not yet expired");
+                //if (!counter)
+                    //console.log("Token not yet expired");
                 local.getConf(callback, failCallback);
             } else {
                 if (counter < 3) {
-                    console.log("Authenticating...");
+                    //console.log("Authenticating...");
                     counter += 1;
                     authService.auth(function () { service.getConf(callback, failCallback, counter) });
                 }
                 else {
-                    console.log("Loading local temp config...");
+                    //console.log("Loading local temp config...");
                     local.makeConfig(tempConfLib, callback);
                 }
             }
@@ -58,7 +58,7 @@
         local.addFixedToConf = function (conf) {
             //console.log(conf);
             for (index in conf.value) {
-                conf.value[index].Apps.push({ "ID": 0, "pTop": "300px", "pLeft": "0px", "Name": "recorder", "Theme": "Theme1" });
+                conf.value[index].Apps.push({ "ID": 0, "pTop": "300px", "pLeft": "0px", "Name": "recorder", "Theme": "Theme1", "Orientation":0 });
             }
             //console.log("new conf", conf);
             return conf;
@@ -95,13 +95,13 @@
             var sConf = { local: false, value: null, last_updated: null };
 
             if (!temp) {
-                console.log("New config required, getting config from server ...");
+                //console.log("New config required, getting config from server ...");
                 this.loadNewConfig(callback, failCallback);
             } else if (!temp.last_updated || (new Date(temp.last_updated) - new Date().setSeconds(new Date().getSeconds() - 10)) < 0) {
-                console.log("Reload, getting config from server ...");
+                //console.log("Reload, getting config from server ...");
                 this.loadNewConfig(callback, failCallback);
             } else {
-                console.log("No New config required, getting local file ...");
+                //console.log("No New config required, getting local file ...");
                 sConf.value = temp.value;
                 sConf.local = true;
                 local.setConfig(sConf, callback);

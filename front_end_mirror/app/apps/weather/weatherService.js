@@ -44,7 +44,7 @@
             var day = currDay + index;
 
             if (day >= local.dayMap.length)
-                day = day - local.dayMap.length + 1;
+                day = day - local.dayMap.length;
 
             return local.dayMap[day];
         };
@@ -61,7 +61,7 @@
             { name: '50', img: 'mist.svg' }
         ];
 
-        local.dayMap = ["Son", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        local.dayMap = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
         return service;
     }]);

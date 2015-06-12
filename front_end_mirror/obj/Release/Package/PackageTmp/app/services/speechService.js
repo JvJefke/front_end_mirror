@@ -1,5 +1,5 @@
 (function () {
-    angular.module('mirrorApp').factory('speechService', ['$rootScope', 'confService', function ($rootScope, confService) {
+    angular.module('mirrorApp').factory('speechService', ['$rootScope', 'confService', 'talkService', function ($rootScope, confService, talkService) {
         var local = {};
         var service = {
             init: init,
@@ -38,23 +38,21 @@
             };
             local.mic.onconnecting = function () {
                 local.info("Microphone is connecting");
+                setTimeout(function () {
+                    window.parent.postMessage({ speech: true }, "http://localhost:3333");
+                }, 7000);
             };
             local.mic.ondisconnected = function () {
                 local.info("Microphone is not connected");
+                local.connect(2000);
             };
 
-            local.mic.connect("7YH3Q2CYLASQKAV6NHURHPZOQTFYA47N");
-
-            // mic.start();
-            // mic.stop();
-
-            /*function kv (k, v) {
-                if (toString.call(v) !== "[object String]") {
-                    v = JSON.stringify(v);
-                }
-                return k + "=" + v + "\n";
-            }*/
+            local.connect(10000);
         };
+
+        local.connect = function(time){
+            setTimeout(function () { local.mic.connect("7YH3Q2CYLASQKAV6NHURHPZOQTFYA47N") }, time);
+        }
 
         function startStopMic(bool) {
             if (bool) {
@@ -82,10 +80,23 @@
                 'func': function (obj) {
                     $rootScope.showCompliment();
                 }
-            }, 'clear': {
+            },
+            'clear': {
                 'appName': 'main',
                 'func': function (obj) {
                     $rootScope.toggleScreen(obj);
+                }
+            },
+            'hello': {
+                'appName': 'main',
+                'func': function (obj) {
+                    talkService.talk("Hello everyone, I'm the mirror mate. Nice to meet you");
+                }
+            },
+            "whatami": {
+                'appName': 'main',
+                'func': function (obj) {
+                    talkService.talk("I show useful information on top of your awesome reflection.");
                 }
             }
         };

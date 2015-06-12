@@ -1,0 +1,28 @@
+<link rel="stylesheet" type="text/css" href="./app/apps/weather/theme1/weather1.css">
+
+<div class="weather ng-hide" ng-app="mirrorApp" ng-controller="weatherCtrl" ng-show="showAll">
+    <div class="weather_inner">
+        <div class="weatherItem_container weatherItem_container_big" ng-show="showNow">
+            <img class="weatherItem_img" ng-src="./img/weather_icons/{{weatherImg(curr.weather[0].icon)}}">
+            <div class="weatherItem_date">Now</div>
+            <div class="weatherItem_content">
+                <my-temp temp="curr.main.temp | number : 0"></my-temp>
+                <div class="weatherItem_humwind" ng-bind="curr.main.humidity + '&#37;'"></div>
+                <div class="weatherItem_humwind" ng-bind="curr.wind.speed + ' km/h'"></div>
+            </div>
+        </div>
+        <div class="weatherItem_container" ng-repeat="item in weatherData.list" ng-show="showDays">
+            <img class="weatherItem_img" ng-src="./img/weather_icons/{{weatherImg(item.weather[0].icon)}}">
+            <div class="weatherItem_date" ng-bind="day($index)"></div>
+            <div class="weatherItem_content">
+                <my-temp pre="'max:'" temp="item.temp.max | number : 0"></my-temp>
+                <my-temp pre="'min:'" temp="item.temp.min | number : 0"></my-temp>
+            </div>
+        </div>
+        <my-w-line class="weather_line" ng-show="showDays" my-length="lineLength" my-orientation="app.Orientation"></my-w-line>
+    </div>    
+</div>
+
+<script src="../app/apps/weather/theme1/weatherLineDirective/weatherLineDirective.js"></script>
+<script src="./app/apps/weather/weatherService.js"></script>
+<script src="./app/apps/weather/weatherCtrl.js"></script>

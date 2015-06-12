@@ -2,6 +2,7 @@
     angular.module('mirrorApp').controller('complimentCtrl', ['$scope', "$rootScope", "complimentService", "talkService", "confService", function ($scope, $rootScope, complimentService, talkService, confService) {
         $scope.compliment = "";
         $scope.showCompliment = false;
+        $scope.size = complimentService.getSize($scope.app.Data.Font);
         var complimentTimeout;
 
         const DURATION = 10000;
@@ -30,7 +31,11 @@
         };
 
         $scope.update.func = function (app) {
-            $scope.app.Data = JSON.parse(app.Data);
+            if (JSON.stringify($scope.app.Data) != app.Data) {
+                $scope.app.Data = JSON.parse(app.Data);
+                $scope.size = complimentService.getSize($scope.app.Data.Font);
+            }
+            
         };
     }]);
 })();

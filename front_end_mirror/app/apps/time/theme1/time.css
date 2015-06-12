@@ -1,27 +1,37 @@
-.time_ring{
-    width: 250px;
-    height: auto;
-    margin-top: -165px;
-}
-
 .time_els{
-    width: 250px;
-    text-align: center;
+    width: 100%;
+    text-align:right
 }
-
 .time_time{
-    margin-top: 90px;
-    font-size: 50px;
+    font-size: 66px;
+    font-weight:lighter;
 }
 .time_date{
-    font-size: 18px;
+    float:left;
+    font-size: 25px;
+    margin-top:-10px;
 }
 .time{
     width: 380px;
-    height: 265px;
+    height: 106px;
 }
-.time_inner{
-    margin-top:3px;
+.time_right{
+    float:right;
+    margin-right: 50px;
+}
+.time_left{
     float:left;
-    margin-left:65px;
+    height: 106px;
+    width: 33px;
+}
+.time_left>div{
+    width:106px;
+    height: 22px;
+    font-size: 25px;
+    text-align:right;
+    margin-top: 57px;
+    margin-left: -15px;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
 }

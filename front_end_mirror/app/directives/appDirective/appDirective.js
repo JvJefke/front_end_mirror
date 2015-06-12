@@ -8,6 +8,9 @@
             },
             templateUrl: "./app/directives/appDirective/my-app.html",
             link: function (scope, element) {
+
+                console.log(scope.app);
+
                 scope.update = {};
                 scope.update.func = function () {}
 
@@ -19,8 +22,9 @@
 
                 var name = scope.app.Name.toLowerCase();
                 var theme = scope.app.Theme.toLowerCase();
+                var orientation = scope.app.Orientation;
 
-                scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + ".html";
+                scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + orientation + ".html";
 
                 scope.$watch('app.pTop', function (nv) {
                     element.css('top', nv);

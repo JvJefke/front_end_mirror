@@ -1,0 +1,51 @@
+#weather_circle{
+    height: 450px;
+    width: 450px;
+    background-color:white;
+    border-radius: 450px;
+    margin-top: -150px;
+    margin-left: -260px;
+    float:left;
+    z-index: 1;
+    border: 3px solid white;
+}
+#weather_curr{
+    height: 159px;
+    width: 380px;
+    overflow: hidden;
+    border-bottom: 1px solid white;
+    margin-bottom: 15px;
+}
+
+#weatherItem_curr_img{
+    float:left;
+    width: 120px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+#weather_curr_info{
+    float:left;
+    margin-left: -170px;
+    margin-top: 15px;
+    color:black;
+    z-index: 2;
+    text-align: right;
+    font-size:18px;
+}
+#weather_curr_info>my-temp{
+    font-size: 55px;
+    text-align:center;
+}
+.weatherItem_container{
+    width: 76px;
+    float:left;
+    text-align:center;
+}
+.weatherItem_container>.weatherItem_img{
+    width: 50px;
+    margin-bottom: 5px;
+}
+.weatherItem_date{
+    margin-bottom: 10px;
+}

@@ -5,11 +5,11 @@
         $scope.showedNewsItems = [];
         $scope.showAll = true;
 
-        var aantal = parseInt($scope.app.Data.Items);
-        var counter = aantal;
+        var aantal = 0; 
+        var counter = 0;
         var newsTimer;
 
-        console.log($scope.app);
+        //console.log($scope.app);
 
         var changeNews = function () {
             //console.log("counter: ", counter);
@@ -25,14 +25,14 @@
             //console.log($scope.newsItems.length)
 
             if (counter >= $scope.newsItems.length - 1) {
-                console.log("refresh data");
+                //console.log("refresh data");
                 counter = aantal;
                 setTimeout(getNews, 10000);
             }
         };
 
         var newsCallback = function (data) {
-            console.log(data);
+            //console.log(data);
             //console.log("callback");
             $scope.newsItems = data.item;
             $scope.showedNewsItems = newsService.getShowNewsItems(0, aantal, $scope.newsItems);
@@ -48,7 +48,9 @@
         };
 
         var getNews = function () {
-            console.log("getNews");
+            //console.log("getNews");
+            aantal = parseInt($scope.app.Data.Items);
+            counter = aantal;
             if($scope.app.Data.URL)
                 newsService.getNews($scope.app.Data.URL, newsCallback, failCallback);
         };
@@ -57,7 +59,7 @@
             var newData = JSON.parse(app.Data);
             //console.log(newData);
             if (!(app.Data === JSON.stringify($scope.app.Data))) {
-                $scope.app.Data.URL = newData.URL;
+                $scope.app.Data = newData;
                 clearInterval(newsTimer);
                 getNews();
             }

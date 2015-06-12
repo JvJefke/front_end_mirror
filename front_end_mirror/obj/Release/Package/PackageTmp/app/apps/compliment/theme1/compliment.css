@@ -1,6 +1,17 @@
 .compliment{
-    font-size: 50px;
     width: 836px;
     height: 106px;
     text-align: center;
+}
+
+.small{
+    font-size: 30px;
+}
+
+.medium{
+    font-size: 50px;
+}
+
+.big {
+    font-size: 70px;
 }

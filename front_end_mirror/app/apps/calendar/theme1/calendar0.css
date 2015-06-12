@@ -1,0 +1,66 @@
+.calendar{
+    width: 1920px;
+    height: 424px;
+}
+
+.calendar_header_content{
+    background-color: white;
+    color:black;
+    float: left;
+    width: 100%;
+    height: 100px;
+}
+
+.calendar_header_content>div:first-child{
+    width: 100px;
+    height: 45px;
+    margin-top: 15px;
+    /*margin-left: 20px;*/
+    font-size: 40px;
+    text-align: center;
+}
+
+.calendar_header_content>div:last-child{
+    text-align: center;
+    width: 100px;
+}
+
+.calendar_header{
+    width: 100px;
+    height: 100%;
+    float: left;
+    margin-left: 20px;
+}
+
+.calendar_day{
+    border-top: 1px solid white;
+    width: 456px;
+    float: left;
+}
+
+.calendar_content{
+    margin-left: 160px;
+    margin-top: -70px;
+    margin-bottom: 30px;
+    width: 300px;
+    float: left;
+}
+
+.calendar_content>div>div{
+    float: left;
+    overflow: auto;
+    height: 100%;
+}
+.calendar_content>div{
+    float: left;
+    margin-bottom: 20px;
+}
+
+.calendar_content>div>div:first-child{
+    width: 150px;
+}
+
+.calendar_content>div>div:last-child>div{
+    float: left;
+}
+

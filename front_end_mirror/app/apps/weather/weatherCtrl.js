@@ -6,6 +6,7 @@
         $scope.showNow = false;
         $scope.showDays = false;
         $scope.numberOfItems = 0;
+        $scope.lineLength = 0;
 
         const REFRESH_DAYS_INTERVAL = 60000 * 60;
         const REFRESH_CURR_INTERVAL = 10000
@@ -50,7 +51,7 @@
 
         var getData = function () {
             var numberOfLines = parseInt($scope.app.Data.Items);
-            $scope.lineHeight = ((numberOfLines <= 1) ? 0 : numberOfLines * 70);
+            $scope.lineLength = ((numberOfLines <= 1) ? 0 : numberOfLines * 70);
 
             if ($scope.app.Data.ShowToday == 1)
                 getNowData();
@@ -59,7 +60,7 @@
             else {
                 getNowData();
                 getWeekData();
-                $scope.lineHeight += 140;
+                $scope.lineLength += 140;
             }
 
         };

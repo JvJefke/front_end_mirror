@@ -20,6 +20,7 @@
                     $rootScope.apps = conf.value[confIndex].Apps;
                     $scope.loader = false;
                     $scope.showAll = true;
+                    //console.log($scope.apps);
                 } else {
                     confService.changeLocation(conf.value[confIndex].Apps, $scope.apps);
                     //console.log($scope.apps);
@@ -44,7 +45,7 @@
         };
 
         $rootScope.toggleScreen = function (obj) {
-            console.log(obj);
+            //console.log(obj);
             if (obj && obj.on_off && obj.on_off.value) {
                 if (obj.on_off.value == "on" && !$scope.showAll)
                     $scope.showAll = true;

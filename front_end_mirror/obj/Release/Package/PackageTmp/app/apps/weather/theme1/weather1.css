@@ -1,0 +1,91 @@
+.weatherItem_img{
+    width: 50px;
+    float: left;
+    margin-left: 25px;
+    background-color: black;
+    padding: 10px;
+}
+
+.weatherItem_content{
+    float: left;
+    width: 100px;
+    margin-left: 30px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.weatherItem_container{
+    width: 330px;
+    height: auto;
+    overflow: auto;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.weatherItem_container_big>img{
+    width: 100px;
+    margin-left: 0;
+}
+
+.weatherItem_container_big my-temp{
+    font-size: 32px;
+    width: 100px;
+    text-align: right;
+}
+
+.weatherItem_container_big>.weatherItem_date{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.weatherItem_container_big>div:last-child{
+    width: 100px;
+    /*margin-left: 30px;*/
+    margin-top: 30px;
+    text-align:right;
+}
+
+.weather_line{
+    width:10px;
+    border-left: 2px solid white;
+    margin-left: 59px;
+    margin-top: 0px;
+}
+
+.weather{
+    width: 380px;
+    height:477px;
+}
+.weather_inner{
+    float:left;
+    width:330px;
+    margin-left:25px;
+}
+
+.ng-hide{
+    display:none!important;
+}
+
+my-temp{
+    float: left;
+}
+
+my-temp>div{
+    text-align: center;
+}
+
+.weatherItem_date{
+    width: 50px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 18px;
+    font-family: contm;
+    text-align:center;
+}
+
+.weatherItem_humwind{
+    width: 80px;
+    float: left;
+    text-align: right;
+    font-size: 17px;
+}

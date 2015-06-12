@@ -1,7 +1,8 @@
 (function () {
     angular.module('mirrorApp').factory('complimentService', ['$http', 'dataService', function ($http, dataService) {
         var service = {
-            getRandomCompliment : getRandomCompliment
+            getRandomCompliment: getRandomCompliment,
+            getSize: getSize
         };
         var local = {
             getRandomCompliment: getRandom
@@ -11,6 +12,12 @@
 
         function getRandomCompliment(arr) {
             return local.getRandomCompliment(arr);
+        }
+
+        var sizeLib = ["small", "medium", "big"];
+
+        function getSize(id) {
+            return sizeLib[id - 1];
         }
 
         // local functions

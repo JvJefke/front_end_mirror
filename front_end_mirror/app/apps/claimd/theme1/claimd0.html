@@ -1,0 +1,20 @@
+<link rel="stylesheet" type="text/css" href="./app/apps/claimd/theme1/claimd0.css">
+
+<div class="news" ng-app="mirrorApp" ng-controller="newsCtrl" ng-show="showAll">
+    <div class="news_header">
+        <div class="news_header_content">
+            <img src="./img/news_icon.png">
+            <div>News</div>
+        </div>
+    </div>
+    <div class="news_main_container">
+        <div class="news_container" ng-repeat="newsItem in showedNewsItems" ng-if="newsItem!=undefined">
+            <img class="news_img" data-my-news-img item="{{newsItem}}" my-err-src="" ng-alt="{{newsItem.content.title}}" />
+            <!--<img class="news_img" data-my-news-img item="{{newsItem}}" ng-alt="{{newsItem.content.title}}" src="" />-->
+            <div class="news_title" ng-bind="newsItem.title"></div>
+        </div>
+    </div>
+</div>
+<script src="./app/apps/claimd/newsImgDirective/newsImgDirective.js"></script>
+<script src="./app/apps/claimd/claimdService.js"></script>
+<script src="./app/apps/claimd/theme1/claimdCtrl.js"></script>
