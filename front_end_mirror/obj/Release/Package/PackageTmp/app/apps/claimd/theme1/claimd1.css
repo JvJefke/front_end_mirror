@@ -1,4 +1,4 @@
-.claimd{
+.news{
     width: 456px;
     border-top: 1px solid white;
     padding-top: 30px;
@@ -6,31 +6,31 @@
     overflow: hidden;
 }
 
-.claimd .news_main_container{
+.news_main_container{
     float: left;
     width: 300px;
     margin-left: 40px;
 }
 
-.claimd .news_img{
+.news_img{
     max-width: 100px;
     height: 50px;
     float: left;
     margin-right: 20px;
 }
 
-.claimd .news_title{
+.news_title{
     float: right;
     width: 180px;
 }
 
-.claimd .news_container{
+.news_container{
     float: left;
     width: 300px;
     margin-bottom: 40px;
 }
 
-.claimd .news_header_content{
+.news_header_content{
     background-color: white;
     color:black;
     float: left;
@@ -40,18 +40,18 @@
     margin-left: 20px;
 }
 
-.claimd .news_header_content>img{
+.news_header_content>img{
     width: 50px;
     height: auto;
     margin-top: 13px;
     margin-left: 26px;
 }
 
-.claimd .news_header_content>div{
+.news_header_content>div{
     text-align: center;
 }
 
-.claimd .news_header{
+.news_header{
     width: 100px;
     height: 100%;
     float: left;

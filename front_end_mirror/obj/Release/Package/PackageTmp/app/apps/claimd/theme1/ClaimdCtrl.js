@@ -1,5 +1,5 @@
 (function () {
-    angular.module('mirrorApp').controller('claimdCtrl', ['$scope', '$http', 'confService', 'claimdService', function ($scope, $http, confService, claimdService) {
+    angular.module('mirrorApp').controller('newsCtrl', ['$scope', '$http', 'confService', 'claimdService', function ($scope, $http, confService, claimdService) {
         $scope.newsItems = [];
         $scope.newNewsItems = [];
         $scope.showedNewsItems = [];
@@ -32,8 +32,8 @@
         };
 
         var newsCallback = function (data) {
-            //console.log(data);
-            $scope.newsItems = data.response.newestItems;
+            console.log(data);
+            $scope.newsItems = data.item;
             $scope.showedNewsItems = claimdService.getShowNewsItems(0, aantal, $scope.newsItems);
             $scope.$apply();
 

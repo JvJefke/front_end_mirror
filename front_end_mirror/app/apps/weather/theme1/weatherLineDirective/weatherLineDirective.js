@@ -7,11 +7,11 @@
                 orientation: "=myOrientation"
             },
             link: function (scope, element) {
-                console.log(scope.orientation);
+                //console.log(scope.orientation);
                 scope.$watch("lineLength", function (newVal, oldVal) {
                     switch (scope.orientation) {
                         case 1:
-                            console.log(scope.lineLength + "px");
+                            //console.log(scope.lineLength + "px");
                             element.css("height", scope.lineLength + "px");
                             break;
                         case 0:

@@ -1,13 +1,12 @@
-<link rel="stylesheet" type="text/css" href="./app/apps/time/theme1/time.css">
+<link rel="stylesheet" type="text/css" href="./app/apps/time/theme2/time.css">
 
 <div class="time" ng-app="mirrorApp" ng-controller="timeCtrl">
-    <div class="time_left">
-        <div class="time_date time_els" ng-bind="time | date : 'dd MMM'"></div>
-    </div>
-    <div class="time_right">
-        <div class="time_time time_els" ng-bind="time | date : 'HH:mm:ss'"></div>
-        <div class="time_date time_els" ng-bind="time | date : 'EEEE'"></div>
+    <div class="time_inner">
+        <div class="time_time time_els" ng-bind="time | date : 'HH:mm'"></div>
+        <div class="time_date time_els" ng-bind="time | date : 'EEEE, dd MMMM'"></div>
+        <data-my-sec class="sec_ring"></data-my-sec>
     </div>    
 </div>
 
+<script src="./app/apps/time/theme2/secDirective.js"></script>
 <script src="./app/apps/time/timeCtrl.js"></script>

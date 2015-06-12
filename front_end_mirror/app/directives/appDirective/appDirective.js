@@ -32,6 +32,14 @@
                 scope.$watch('app.pLeft', function (nv) {
                     element.css('left', nv);
                 });
+                scope.$watch('app.Theme', function (nv) {
+                    theme = nv;
+                    scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + orientation + ".html";
+                });
+                scope.$watch('app.Orientation', function (nv) {
+                    orientation = nv;
+                    scope.app.appSrc = "./app/apps/" + name + "/" + theme + "/" + name + orientation + ".html";
+                });
 
                 scope.$on("update", function (event, data) {
                     var app = confService.getAppByName(data, scope.app.Name);

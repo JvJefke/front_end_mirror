@@ -22,7 +22,7 @@
                     $scope.showAll = true;
                     //console.log($scope.apps);
                 } else {
-                    confService.changeLocation(conf.value[confIndex].Apps, $scope.apps);
+                    confService.changeVals(conf.value[confIndex].Apps, $scope.apps);
                     //console.log($scope.apps);
                     $scope.$broadcast("update", conf.value[confIndex].Apps);
                 }                

@@ -12,7 +12,6 @@
         // after 3 times, use hardcoded configuration
 
         function getConf(callback, failCallback, counter) {
-            //local.makeConfig(tempConfLib, callback);
 
             if (!counter)
                 counter = 0;
@@ -34,13 +33,14 @@
             }
         };
 
-        function changeLocation(n, o) {
+        function changeVals(n, o) {
             for (var index in o) {
                 var newApp = getAppByName(n, o[index].Name);
                 if (newApp) {
-                    //console.log(o[index], newApp);
                     o[index].pLeft = newApp.pLeft;
-                    o[index].pTop = newApp.pTop
+                    o[index].pTop = newApp.pTop;
+                    o[index].Theme = newApp.Theme;
+                    o[index].Orientation = newApp.Orientation;
                 }
             }
         }
@@ -58,13 +58,14 @@
         local.addFixedToConf = function (conf) {
             //console.log(conf);
             for (index in conf.value) {
-                conf.value[index].Apps.push({ "ID": 0, "pTop": "300px", "pLeft": "0px", "Name": "recorder", "Theme": "Theme1", "Orientation":0 });
+                conf.value[index].Apps.push({ "ID": 0, "pTop": "300px", "pLeft": "0px", "Name": "recorder", "Theme": "Theme1", "Orientation": 0 });
+                //conf.value[index].Apps.push({ "ID": 10, "Data": "{ \"Items\": 2, \"Rate\": 10, \"URL\": \"http://www.hln.be/rss.xml\" }", "Name": "Claimd", "Orientation": 0, "Theme": "Theme2", "pLeft": "1000px", "pTop": "350px" });
             }
             //console.log("new conf", conf);
             return conf;
         };
 
-        // add fixed apps to configuration (eg. recorder for speech recognition)
+        // add fixed apps to configuration (eg. recorder for speech recognition)C
         // save currrent config in localstorage and fire callback of initial function
 
         local.setConfig = function (conf, callback) {

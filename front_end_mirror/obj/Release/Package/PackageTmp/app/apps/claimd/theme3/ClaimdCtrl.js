@@ -1,5 +1,5 @@
 (function () {
-    angular.module('mirrorApp').controller('newsCtrl', ['$scope', '$http', 'confService', 'newsService', function ($scope, $http, confService, newsService) {
+    angular.module('mirrorApp').controller('newsCtrl', ['$scope', '$http', 'confService', 'claimdService', function ($scope, $http, confService, claimdService) {
         $scope.newsItems = [];
         $scope.showAll = true;
         $scope.columns = [];
@@ -11,8 +11,9 @@
         var newsTimer;
 
         var newsCallback = function (data) {
+            console.log(data);
             $scope.newsItems = data.item;
-            $scope.columns = newsService.splitNewsInColumns(data, aantalColummns);
+            $scope.columns = claimdService.splitNewsInColumns(data, aantalColummns);
             $scope.scrollInterval = -1;
             $scope.$apply();
             $scope.scrollInterval = 10000;
@@ -25,7 +26,7 @@
 
         var getNews = function () {
             if($scope.app.Data.URL)
-                newsService.getNews($scope.app.Data.URL, newsCallback, failCallback);
+                claimdService.getNews($scope.app.Data.URL, newsCallback, failCallback);
         };
 
         $scope.update.func = function (app) {

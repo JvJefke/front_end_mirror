@@ -1,5 +1,5 @@
 (function () {
-    angular.module('mirrorApp').controller('claimdCtrl', ['$scope', '$http', 'confService', 'claimdService', function ($scope, $http, confService, claimdService) {
+    angular.module('mirrorApp').controller('newsCtrl', ['$scope', '$http', 'confService', 'newsService', function ($scope, $http, confService, newsService) {
         $scope.newsItems = [];
         $scope.newNewsItems = [];
         $scope.showedNewsItems = [];
@@ -16,7 +16,7 @@
             //console.log("aantal: ", aantal);
 
             $scope.showedNewsItems = [];
-            $scope.showedNewsItems = claimdService.getShowNewsItems(counter, aantal, $scope.newsItems);
+            $scope.showedNewsItems = newsService.getShowNewsItems(counter, aantal, $scope.newsItems);
             $scope.$apply();
 
             counter += aantal;
@@ -33,8 +33,9 @@
 
         var newsCallback = function (data) {
             //console.log(data);
-            $scope.newsItems = data.response.newestItems;
-            $scope.showedNewsItems = claimdService.getShowNewsItems(0, aantal, $scope.newsItems);
+            //console.log("callback");
+            $scope.newsItems = data.item;
+            $scope.showedNewsItems = newsService.getShowNewsItems(0, aantal, $scope.newsItems);
             $scope.$apply();
 
             clearInterval(newsTimer);
@@ -51,12 +52,12 @@
             aantal = parseInt($scope.app.Data.Items);
             counter = aantal;
             if($scope.app.Data.URL)
-                claimdService.getNews($scope.app.Data.URL, newsCallback, failCallback);
+                newsService.getNews($scope.app.Data.URL, newsCallback, failCallback);
         };
 
         $scope.update.func = function (app) {
             var newData = JSON.parse(app.Data);
-            //console.log(newData);
+
             if (!(app.Data === JSON.stringify($scope.app.Data))) {
                 $scope.app.Data = newData;
                 clearInterval(newsTimer);

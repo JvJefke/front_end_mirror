@@ -7,10 +7,10 @@
             splitNewsInColumns: splitNewsInColumns,
         };
 
-        function getNews(callback, failCallback) {
+        function getNews(source, callback, failCallback) {
             var fail;
 
-            if (!callback) {
+            if (!source || !callback) {
                 console.log("Niet alle parameters zijn correct meegegeven.");
                 return;
             }
@@ -36,11 +36,11 @@
 
         function splitNewsInColumns(arr, aantal) {
             var returnArr = [];
-            for (var i = 0; i < arr.length ; i += aantal) {
+            for (var i = 0; i < arr.item.length ; i += aantal) {
                 for (var ii = 0; ii < aantal; ii++) {
                     if (!returnArr[ii]) 
                         returnArr.push([]);
-                    returnArr[ii].push(arr[i + ii]);
+                    returnArr[ii].push(arr.item[i + ii]);
                 }
             }
             return returnArr;

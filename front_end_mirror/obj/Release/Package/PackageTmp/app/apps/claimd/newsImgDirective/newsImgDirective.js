@@ -1,9 +1,9 @@
 ﻿(function () {
-    angular.module("mirrorApp").directive('myClaimdImg', ["dataService", function (dataService) {
+    angular.module("mirrorApp").directive('myNewsImg', ["dataService", function (dataService) {
         return {
             restrict: 'A',
             link: function (scope, element, attrs) {
-                var img = attrs.item;
+                var img = dataService.getUrlFromRSS(attrs.item);
 
                 if (!img)
                     element.css("display", "none");
