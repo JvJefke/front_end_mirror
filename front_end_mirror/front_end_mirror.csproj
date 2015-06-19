@@ -64,15 +64,8 @@
     <Content Include="app\apps\claimd\claimdService.js" />
     <Content Include="app\apps\claimd\theme1\claimd0.css" />
     <Content Include="app\apps\claimd\theme1\claimd0.html" />
-    <Content Include="app\apps\claimd\theme1\claimd1.css" />
-    <Content Include="app\apps\claimd\theme1\claimd1.html" />
-    <Content Include="app\apps\claimd\theme1\claimdCtrl.js" />
-    <Content Include="app\apps\claimd\theme2\claimd0.css" />
-    <Content Include="app\apps\claimd\theme2\claimd0.html" />
-    <Content Include="app\apps\claimd\theme2\claimd1.css" />
-    <Content Include="app\apps\claimd\theme2\claimd1.html" />
-    <Content Include="app\apps\claimd\theme2\claimdCtrl.js" />
-    <Content Include="app\apps\claimd\theme2\newsScrollDirective\newsScrollDirective.js" />
+    <Content Include="app\apps\claimd\claimdCtrl.js" />
+    <Content Include="app\apps\claimd\theme1\newsScrollDirective\newsScrollDirective.js" />
     <Content Include="app\apps\news\theme2\newsScrollDirective\newsScrollDirective.js" />
     <Content Include="app\apps\news\theme2\news0.css" />
     <Content Include="app\apps\news\theme2\news0.html" />
@@ -98,7 +91,7 @@
     <Content Include="app\apps\traffic\trafficCtrl.js" />
     <Content Include="app\apps\traffic\trafficService.js" />
     <Content Include="app\apps\weather\theme2\weather0.css" />
-    <Content Include="app\apps\weather\theme2\weather1.html" />
+    <Content Include="app\apps\weather\theme2\weather0.html" />
     <Content Include="app\apps\weather\theme1\weather0.html" />
     <Content Include="app\apps\weather\theme1\weather0.css" />
     <Content Include="app\apps\weather\theme1\weatherLineDirective\weatherLineDirective.js" />

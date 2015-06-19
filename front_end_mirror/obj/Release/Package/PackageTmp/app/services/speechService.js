@@ -96,7 +96,13 @@
             "whatami": {
                 'appName': 'main',
                 'func': function (obj) {
-                    talkService.talk("I show useful information on top of your awesome reflection.");
+                    talkService.talk("I'm a smart mirror that shows useful information on top of your awesome reflection.");
+                }
+            },
+            "thankyou": {
+                'appName': 'main',
+                'func': function (obj) {
+                    talkService.talk("You're welcome!");
                 }
             }
         };

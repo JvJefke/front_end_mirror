@@ -34,6 +34,13 @@ data-my-app{
     margin-top:720px;
     text-align:center;
 }
+
+#user{
+    margin-top: -50px;
+    width: 100%;
+    text-align:center;
+    font-size: 30px;
+}
 /*[ng-cloak].splash{
     display:block !important;
     background-image: url("../img/logo_black.jpg"), url("../img/ajax-loader.gif");

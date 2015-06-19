@@ -4,7 +4,8 @@
         var service = {
             getConf: getConf,
             changeVals: changeVals,
-            getAppByName: getAppByName
+            getAppByName: getAppByName,
+            addDeleteApps: addDeleteApps
         };
 
         // Check if token in localstorage is expired: no --> use exesting token, yes --> request new token
@@ -42,6 +43,22 @@
                     o[index].Theme = newApp.Theme;
                     o[index].Orientation = newApp.Orientation;
                 }
+            }
+        }
+
+        function addDeleteApps(n, o) {
+            for (var index in n) {
+                if(!getAppByName(o, n[index].Name))
+                    o.push(n[index]);
+            }
+            for (var index in o) {
+                var app = null;
+                for (var i in n)
+                    if (o[index].Name == n[i].Name)
+                        app = 1;
+
+                if (!app)
+                    o.splice(index, 1);
             }
         }
 

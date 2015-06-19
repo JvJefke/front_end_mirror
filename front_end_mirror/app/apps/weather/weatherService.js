@@ -3,12 +3,12 @@
         var service = {};
         var local = {};
 
-        service.getWeatherData = function (data, callback) {
-            dataService.getData("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + data.Location + "&cnt=" + data.Items + "&units=metric&mode=json&APPID=c7d757dcd68f0c72d6c80b8f680adca7", callback);
+        service.getWeatherData = function (data, callback, failCallback) {
+            dataService.getData("http://api.openweathermap.org/data/2.5/forecast/daily?q=" + data.Location + "&cnt=" + data.Items + "&units=metric&mode=json&APPID=c7d757dcd68f0c72d6c80b8f680adca7", callback, failCallback);
         };
 
-        service.getCurrentWeatherData = function (data, callback) {
-            dataService.getData("http://api.openweathermap.org/data/2.5/weather?q=" + data.Location + "&units=metric&mode=json&APPID=c7d757dcd68f0c72d6c80b8f680adca7", callback);
+        service.getCurrentWeatherData = function (data, callback, failCallback) {
+            dataService.getData("http://api.openweathermap.org/data/2.5/weather?q=" + data.Location + "&units=metric&mode=json&APPID=c7d757dcd68f0c72d6c80b8f680adca7", callback, failCallback);
         };
 
         service.getDay = function (index) {

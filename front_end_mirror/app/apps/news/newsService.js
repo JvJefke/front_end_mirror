@@ -1,5 +1,5 @@
 (function () {
-    angular.module('mirrorApp').factory('newsService', ['$http', 'dataService', function ($http, dataService) {
+    angular.module('mirrorApp').factory('newsService', ['dataService', function (dataService) {
         var local = {};
         var service = {
             getNews: getNews,
@@ -27,9 +27,10 @@
             var retTemp = [];
             for (var i = 0; i < aantal; i++) {
                 var item = newsItems[counter + i];
-                //console.log(item);
-                if(item)
+                if (item)
                     retTemp.push(item);
+                else
+                    retTemp.push({ title: "", src: "" });
             }
 
             return retTemp;

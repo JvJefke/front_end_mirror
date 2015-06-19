@@ -16,15 +16,11 @@
                     clearInterval(timer);
                     $(element).animate({ scrollTop: 0 });
                     scrollHeight = 0;
-                    console.log(scope.interval);
                     if (scope.interval > 1) {
                         timer = setInterval(function () {
 
                             elHeight = parseInt(getComputedStyle(element[0].parentNode).getPropertyValue("height").slice(0, -2));
                             totalHeight = parseInt(getComputedStyle(element[0].querySelector(".news_column")).getPropertyValue("height").slice(0, -2));
-
-                            console.log(elHeight);
-                            console.log(totalHeight);
 
                             scrollHeight += elHeight * 0.7;                           
 
@@ -69,9 +65,7 @@
                                     "margin-left": -scrollHeight + "px",
                                     "transition": "1s ease-in-out"
                                 });
-                            }                           
-
-                            console.log(scrollHeight);
+                            }
 
                         }, scope.interval * -1);
                     }

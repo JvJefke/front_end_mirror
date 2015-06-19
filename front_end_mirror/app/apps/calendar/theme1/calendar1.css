@@ -65,12 +65,13 @@
     border-top: 1px solid white;
     width: 100%;
     float: left;
+    margin-bottom: 10px;
 }
 
 .calendar_content{
     margin-left: 160px;
     margin-top: -70px;
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
     width: 300px;
     float: left;
 }

@@ -1,9 +1,9 @@
-.weather{
+.weather2{
     width: 380px;
     height: 318px;
     overflow: hidden;
 }
-#weather_circle{
+.weather2 #weather_circle{
     height: 450px;
     width: 450px;
     background-color:white;
@@ -14,7 +14,7 @@
     z-index: 1;
     border: 3px solid white;
 }
-#weather_curr{
+.weather2 #weather_curr{
     height: 159px;
     width: 380px;
     overflow: hidden;
@@ -22,14 +22,14 @@
     margin-bottom: 15px;
 }
 
-#weatherItem_curr_img{
+.weather2 #weatherItem_curr_img{
     float:left;
     width: 120px;
     margin-left: 30px;
     margin-top: 15px;
 }
 
-#weather_curr_info{
+.weather2 #weather_curr_info{
     float:left;
     margin-left: -170px;
     margin-top: 15px;
@@ -38,19 +38,19 @@
     text-align: right;
     font-size:18px;
 }
-#weather_curr_info>my-temp{
+.weather2 #weather_curr_info>my-temp{
     font-size: 55px;
     text-align:center;
 }
-.weatherItem_container{
+.weather2 .weatherItem_container{
     width: 76px;
     float:left;
     text-align:center;
 }
-.weatherItem_container>.weatherItem_img{
+.weather2 .weatherItem_container>.weatherItem_img{
     width: 50px;
     margin-bottom: 5px;
 }
-.weatherItem_date{
+.weather2 .weatherItem_date{
     margin-bottom: 10px;
 }

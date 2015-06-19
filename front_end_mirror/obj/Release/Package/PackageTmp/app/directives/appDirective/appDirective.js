@@ -9,7 +9,7 @@
             templateUrl: "./app/directives/appDirective/my-app.html",
             link: function (scope, element) {
 
-                console.log(scope.app);
+                //console.log(scope.app);
 
                 scope.update = {};
                 scope.update.func = function () {}

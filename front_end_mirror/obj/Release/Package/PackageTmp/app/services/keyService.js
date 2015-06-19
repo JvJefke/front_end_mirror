@@ -78,6 +78,11 @@
                 name: "key0",
                 func: function () { $rootScope.changeUser(9); },
                 status: true
+            },
+            '83': {
+                name: "switchUser",
+                func: function () { $rootScope.cycleUser() },
+                status:true
             }
         };
 

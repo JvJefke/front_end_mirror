@@ -3,9 +3,9 @@
         $scope.newsItems = [];
         $scope.showAll = true;
         $scope.columns = [];
-        $scope.scrollInterval = 10000;
-        var aantalColummns = 2;
+        $scope.scrollInterval = $scope.app.Data.Rate * 1000;
 
+        var aantalColummns = 2;
         var aantal = parseInt($scope.app.Data.Items);
         var counter = aantal;
         var newsTimer;
@@ -15,7 +15,7 @@
             $scope.columns = newsService.splitNewsInColumns(data, aantalColummns);
             $scope.scrollInterval = -1;
             $scope.$apply();
-            $scope.scrollInterval = 10000;
+            $scope.scrollInterval = $scope.app.Data.Rate * 1000;
         };
 
         var failCallback = function () {
@@ -30,7 +30,7 @@
 
         $scope.update.func = function (app) {
             var newData = JSON.parse(app.Data);
-            //console.log(newData);
+
             if (!(app.Data === JSON.stringify($scope.app.Data))) {
                 $scope.app.Data.URL = newData.URL;
                 clearInterval(newsTimer);                

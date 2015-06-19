@@ -8,27 +8,27 @@
         $scope.numberOfItems = 0;
         $scope.lineLength = 0;
 
-        const REFRESH_DAYS_INTERVAL = 60000 * 60;
-        const REFRESH_CURR_INTERVAL = 10000
+        const REFRESH_DAYS_INTERVAL = 60000 * 60 * 3;
+        const REFRESH_CURR_INTERVAL = 60000;
 
         var setData = function (data) {
             $scope.weatherData = data;
             if (($scope.app.Data.ShowToday != 1) || ($scope.curr && $scope.curr.weather)) {
                 $scope.showDays = true;
-                //$scope.showAll = true;
                 if ($scope.app.Data.ShowToday == 2)
                     $scope.showNow = false;
             }
+            setTimeout(getWeekData, REFRESH_DAYS_INTERVAL);
         };
 
         var setCurrData = function(data){
             $scope.curr = data;
             if (($scope.app.Data.ShowToday != 2) || ($scope.weatherData && $scope.weatherData.list)) {
                 $scope.showNow = true;
-                //$scope.showAll = true;
                 if ($scope.app.Data.ShowToday == 1)
                     $scope.showDays = false;
-            }                
+            }
+            setTimeout(getNowData, REFRESH_CURR_INTERVAL);
         }
 
         var failWeek = function () {
@@ -42,11 +42,13 @@
         }
 
         var getWeekData = function () {
-            weatherService.getWeatherData($scope.app.Data, setData, function () { setTimeout(setData, REFRESH_DAYS_INTERVAL); }, failWeek)
+            console.log("week_refresh");
+            weatherService.getWeatherData($scope.app.Data, setData, failWeek)
         };
 
-        var getNowData = function(){
-            weatherService.getCurrentWeatherData($scope.app.Data, setCurrData, function () { setTimeout(setCurrData, REFRESH_CURR_INTERVAL); }, failNow);
+        var getNowData = function () {
+            console.log("now_data");
+            weatherService.getCurrentWeatherData($scope.app.Data, setCurrData, failNow);
         };
 
         var getData = function () {

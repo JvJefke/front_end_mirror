@@ -47,15 +47,18 @@
                             elHeight = parseInt(getComputedStyle(element[0].parentNode).getPropertyValue("width"));
                             totalHeight = parseInt(element[0].querySelector(".news_column").scrollWidth);
 
-                            scrollHeight += elHeight -14;
+                            if (scrollHeight != 0)
+                                scrollHeight += elHeight - 15;
+                            else
+                                scrollHeight += elHeight -30;
 
-                            if (scrollHeight > totalHeight - 40) {
+                            if (scrollHeight > totalHeight - 60) {
                                 if (scope.func && typeof (scope.func) == "function") {
                                     scope.func();
                                     clearInterval(timer);
                                     return;
                                 } else {
-                                    scrollHeight = 0;
+                                    scrollHeight = -15;
                                 }
                             }
 

@@ -11,6 +11,7 @@
     <div id="container" ng-cloak="">
         <data-my-app ng-show="showAll" ng-repeat="app in apps" data-app="app" data-apps="Apps"></data-my-app>
     </div>
+    <div id="user" ng-cloak="" ng-bind="username" ng-show="showUser"></div>
     <!--<form ng-controller="linuxController" style="position:absolute; margin-top:-50px">
         <input type="text" id="Text" ng-model="linuxInputData" my-linux-input-directive on-blur="linuxInputBlur" focus="linuxInputFocus" ng-keyup="submitLinuxData($event)"/>
     </form>-->

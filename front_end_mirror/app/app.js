@@ -5,25 +5,32 @@
         $scope.apps = [];
         $scope.showAll = false;
         $scope.loader = true;
+        $scope.showUser = false;
+        $scope.username = "user 1";
 
-        const CONFIG_REFRESH_TIME = 5000; //60000 * 5;
+        const CONFIG_REFRESH_TIME = 10000; //60000 * 5;
         const CONFIG_FAIL_REFRESH_TIME = 5000;
+        const USER_ID_SHOW_TIME = 5000;
        
         var loadedConf;
         var confIndex = 0;
+        var userTimeout;
 
-        var setConfig = function (conf) {
+        var setConfig = function (conf, bool) {
             loadedConf = conf;
             if (conf) {
-                if ($scope.apps.length == 0) {
+                if ($scope.apps.length == 0 || bool) {
                     $scope.apps = conf.value[confIndex].Apps;
                     $rootScope.apps = conf.value[confIndex].Apps;
                     $scope.loader = false;
                     $scope.showAll = true;
-                    //console.log($scope.apps);
+                    $scope.username = "user " + loadedConf.value[confIndex].MemberName;
+                    $scope.showUser = true;
+                    clearTimeout(userTimeout);
+                    userTimeout = setTimeout(function () { $scope.showUser = false; }, USER_ID_SHOW_TIME);
                 } else {
+                    confService.addDeleteApps(conf.value[confIndex].Apps, $scope.apps);
                     confService.changeVals(conf.value[confIndex].Apps, $scope.apps);
-                    //console.log($scope.apps);
                     $scope.$broadcast("update", conf.value[confIndex].Apps);
                 }                
                 setTimeout(getConf, CONFIG_REFRESH_TIME);
@@ -45,29 +52,32 @@
         };
 
         $rootScope.toggleScreen = function (obj) {
-            //console.log(obj);
             if (obj && obj.on_off && obj.on_off.value) {
                 if (obj.on_off.value == "on" && !$scope.showAll)
                     $scope.showAll = true;
                 else if (obj.on_off.value == "off" && $scope.showAll)
                     $scope.showAll = false;
             }
-
         };
 
-        $rootScope.changeUser = function changeUser(index) {
+        $rootScope.changeUser = function(index) {
             if (index < loadedConf.value.length) {
                 confIndex = index;
                 var temp = loadedConf.value[index];
 
                 $scope.apps = temp.Apps;
             }
-        };    
+        };
+
+        $rootScope.cycleUser = function () {
+            confIndex += 1;
+            if (confIndex >= loadedConf.value.length) {
+                confIndex = 0;
+            }            
+            setConfig(loadedConf, true);
+        }
 
         speechService.init();
-
-        //window.parent.postMessage({ voice: {value:"You're looking good today"}}, "http://localhost:8080")
-
         getConf();
 
     }]);
