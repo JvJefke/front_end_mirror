@@ -3,7 +3,9 @@
         var local = {};
         var service = {
             init: init,
-            startStopMic: startStopMic
+            startStopMic: startStopMic,
+            registerSpeechFunction: registerSpeechFunction,
+            registerMic: registerMic
         };
 
         function init() {
@@ -24,8 +26,6 @@
                 local.info("Recording stopped, processing started");
             };
             local.mic.onresult = function (intent, entities) {
-                //console.log("intent:", intent);
-                //console.log("entities:", entities);
 
                 if (local.lib[intent])
                     local.lib[intent].func(entities);
@@ -56,37 +56,29 @@
 
         function startStopMic(bool) {
             if (bool) {
-                local.mic.stop();
-                $rootScope.recorderHide();
+                local.mic.start();
+                local.micLib[bool]();
             } else {
-                local.mic.start()
-                $rootScope.recorderShow();
+                local.mic.stop();
+                local.micLib[bool]();
             }
 
             return !bool;
         };
 
-        local.lib = {
-            'zet_timer': {
-                'appName': 'timer',
-                'func': function (obj) {
-                    //console.log($rootScope);
-                    //console.log($rootScope.setTimer);
-                    $rootScope.setTimer(obj);
-                }
-            },
-            'show_compliment': {
-                'appName': 'compliment',
-                'func': function (obj) {
-                    $rootScope.showCompliment();
-                }
-            },
-            'clear': {
-                'appName': 'main',
-                'func': function (obj) {
-                    $rootScope.toggleScreen(obj);
-                }
-            },
+        function registerSpeechFunction(name, appName, func) {
+            local.lib[name] = {
+                'appName': appName,
+                'func': func
+            }
+        }
+
+        function registerMic(funcTrue, funcFalse) {
+            local.micLib[true] = funcTrue;
+            local.micLib[false] = funcFalse;
+        }
+
+        local.lib = {           
             'hello': {
                 'appName': 'main',
                 'func': function (obj) {
@@ -106,6 +98,15 @@
                 }
             }
         };
+
+        local.micLib = {
+            true: function () {
+                console.log("mic still initializing ...");
+            },
+            false: function () {
+                console.log("mic still initializing ...");
+            }
+        }
 
         return service;
     }]);

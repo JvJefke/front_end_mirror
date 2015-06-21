@@ -1,5 +1,5 @@
 (function () {
-    angular.module('mirrorApp').controller('timerCtrl', ['$scope', '$rootScope', 'timerService', 'talkService', function ($scope, $rootScope, timerService, talkService) {
+    angular.module('mirrorApp').controller('timerCtrl', ['$scope', 'speechService', 'timerService', 'talkService', function ($scope, speechService, timerService, talkService) {
         $scope.showTimer = false;
         $scope.timer = 0;
         var timer;
@@ -13,7 +13,7 @@
 
         var tick = function () {
             timer -= 1;
-            //console.log("timer", timer);
+
             if (timer >= 0)
                 $scope.timer = timerService.formatTimer(timer);
             else {
@@ -24,15 +24,17 @@
             $scope.$apply();
         };
 
-        $rootScope.setTimer = function (obj) {
-            //console.log(obj);
+
+        function setTimer(obj) {
             clearInterval(interval);
             timer = obj.duration.value;
             $scope.timer = timerService.formatTimer(timer);
-            //console.log("timer", $scope.timer);
             $scope.showTimer = true;
             interval = setInterval(tick, 1000);
             talkService.talk("Setting timer for " + obj.duration.body);
         };
+
+        speechService.registerSpeechFunction("zet_timer", "timer", setTimer);
+        
     }]);
 })();

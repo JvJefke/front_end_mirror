@@ -51,31 +51,25 @@
             keyService.keyUpPressed(e);
         };
 
-        $rootScope.toggleScreen = function (obj) {
+        function toggleScreen(obj) {
             if (obj && obj.on_off && obj.on_off.value) {
                 if (obj.on_off.value == "on" && !$scope.showAll)
                     $scope.showAll = true;
                 else if (obj.on_off.value == "off" && $scope.showAll)
                     $scope.showAll = false;
             }
-        };
+        };      
 
-        $rootScope.changeUser = function(index) {
-            if (index < loadedConf.value.length) {
-                confIndex = index;
-                var temp = loadedConf.value[index];
-
-                $scope.apps = temp.Apps;
-            }
-        };
-
-        $rootScope.cycleUser = function () {
+        function cycleUser() {
             confIndex += 1;
             if (confIndex >= loadedConf.value.length) {
                 confIndex = 0;
             }            
             setConfig(loadedConf, true);
         }
+
+        keyService.registerKey("83", "cycleUser", cycleUser);
+        speechService.registerSpeechFunction("clear", "main", toggleScreen);
 
         speechService.init();
         getConf();
