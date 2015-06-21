@@ -1,5 +1,5 @@
 ﻿(function () {
-    angular.module('mirrorApp').factory('authService', ['$rootScope', 'dataService', function ($rootScope, dataService) {
+    angular.module('mirrorApp').factory('authService', ['dataService', function (dataService) {
         var local = {};
         var service = {
             auth: auth,

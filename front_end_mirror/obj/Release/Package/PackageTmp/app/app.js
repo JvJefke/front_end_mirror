@@ -1,7 +1,8 @@
 (function () {
-    angular.module("mirrorApp",["uiGmapgoogle-maps"])
+    angular.module("mirrorApp", [])
 
-    .controller("mirror",['$scope', '$rootScope', 'confService', 'speechService', 'keyService', function($scope, $rootScope, confService, speechService, keyService){
+    .controller("mirror",['$scope', 'confService', 'speechService', 'keyService', function($scope, confService, speechService, keyService){
+       
         $scope.apps = [];
         $scope.showAll = false;
         $scope.loader = true;
@@ -21,7 +22,6 @@
             if (conf) {
                 if ($scope.apps.length == 0 || bool) {
                     $scope.apps = conf.value[confIndex].Apps;
-                    $rootScope.apps = conf.value[confIndex].Apps;
                     $scope.loader = false;
                     $scope.showAll = true;
                     $scope.username = "user " + loadedConf.value[confIndex].MemberName;
@@ -32,16 +32,16 @@
                     confService.addDeleteApps(conf.value[confIndex].Apps, $scope.apps);
                     confService.changeVals(conf.value[confIndex].Apps, $scope.apps);
                     $scope.$broadcast("update", conf.value[confIndex].Apps);
-                }                
+                }
                 setTimeout(getConf, CONFIG_REFRESH_TIME);
             } else {
                 setTimeout(getConf, CONFIG_FAIL_REFRESH_TIME);
             }
-        }
+        };
 
         var failGetConf = function (data, status, headers, config) {
             console.log(data, status, headers, config);
-        }
+        };
 
         var getConf = function(){
             confService.getConf(setConfig, failGetConf);            
@@ -51,38 +51,32 @@
             keyService.keyUpPressed(e);
         };
 
-        $rootScope.toggleScreen = function (obj) {
+        function toggleScreen(obj) {
             if (obj && obj.on_off && obj.on_off.value) {
                 if (obj.on_off.value == "on" && !$scope.showAll)
                     $scope.showAll = true;
                 else if (obj.on_off.value == "off" && $scope.showAll)
                     $scope.showAll = false;
             }
-        };
+        };      
 
-        $rootScope.changeUser = function(index) {
-            if (index < loadedConf.value.length) {
-                confIndex = index;
-                var temp = loadedConf.value[index];
-
-                $scope.apps = temp.Apps;
-            }
-        };
-
-        $rootScope.cycleUser = function () {
+        function cycleUser() {
             confIndex += 1;
             if (confIndex >= loadedConf.value.length) {
                 confIndex = 0;
-            }            
+            }
             setConfig(loadedConf, true);
-        }
+        };
+
+        keyService.registerKey("83", "cycleUser", cycleUser);
+        speechService.registerSpeechFunction("clear", "main", toggleScreen);
 
         speechService.init();
         getConf();
 
     }]);
 
-    angular.module("mirrorApp").config(["$controllerProvider", "$provide", "$compileProvider", "uiGmapGoogleMapApiProvider", "$httpProvider", function ($controllerProvider, $provide, $compileProvider, GoogleMapApi, $httpProvider) {
+    angular.module("mirrorApp").config(["$controllerProvider", "$provide", "$compileProvider", "$httpProvider", function ($controllerProvider, $provide, $compileProvider, $httpProvider) {
         angular.module("mirrorApp")._controller = angular.module("mirrorApp").controller;
         angular.module("mirrorApp")._service = angular.module("mirrorApp").service;
         angular.module("mirrorApp")._factory = angular.module("mirrorApp").factory;
@@ -128,12 +122,6 @@
             return( this );
 
         };
-
-        GoogleMapApi.configure({
-            key: 'AIzaSyBNLJCL7dzCI7QeTlFVF98mZRS2Pva1e6Y',
-            v: '3.17',
-            libraries: 'weather,geometry,visualization'
-        });
 
         //$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
         // Override $http service's default transformRequest

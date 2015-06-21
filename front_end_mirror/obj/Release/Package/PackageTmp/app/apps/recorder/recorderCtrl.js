@@ -1,18 +1,16 @@
 (function () {
-    angular.module('mirrorApp').controller('recorderCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    angular.module('mirrorApp').controller('recorderCtrl', ['$scope', 'speechService', function ($scope, speechService) {
         $scope.showRecorder = false;
 
-        $rootScope.recorderToggle = function () {
-            $scope.showRecorder = !$scope.showRecorder;
-        };
-
-        $rootScope.recorderHide = function () {
+        function recorderHide() {
             $scope.showRecorder = false;
         };
 
-        $rootScope.recorderShow = function () {
+        function recorderShow() {
             $scope.showRecorder = true;
         };
+
+        speechService.registerMic(recorderShow, recorderHide);
 
     }]);
 })();

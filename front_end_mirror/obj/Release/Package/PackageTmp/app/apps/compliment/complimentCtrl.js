@@ -1,5 +1,5 @@
 (function () {
-    angular.module('mirrorApp').controller('complimentCtrl', ['$scope', "$rootScope", "complimentService", "talkService", "confService", function ($scope, $rootScope, complimentService, talkService, confService) {
+    angular.module('mirrorApp').controller('complimentCtrl', ['$scope', "keyService", "complimentService", "talkService", "speechService", function ($scope, keyService, complimentService, talkService, speechService) {
         $scope.compliment = "";
         $scope.showCompliment = false;
         $scope.size = complimentService.getSize($scope.app.Data.Font);
@@ -25,10 +25,8 @@
             complimentTimeout = setTimeout(function () { $scope.showCompliment = false }, DURATION);
         }
 
-        $rootScope.showCompliment = function () {
-            //console.log("giving compliment...");
-            showCompliment();
-        };
+        keyService.registerKey("67", "compliment", showCompliment);
+        speechService.registerSpeechFunction("show_compliment", "compliment", showCompliment);
 
         $scope.update.func = function (app) {
             if (JSON.stringify($scope.app.Data) != app.Data) {
