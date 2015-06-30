@@ -8,9 +8,9 @@
             addDeleteApps: addDeleteApps
         };
 
-        // Check if token in localstorage is expired: no --> use exesting token, yes --> request new token
-        // Request token again if fails (up to 3 times)
-        // after 3 times, use hardcoded configuration
+        // Check of de token in de localstorage expired is: nee --> gebruik bestaand token, ja --> vraag een nieuw token aan
+        // Vraag nogmaals een token als de aanvraag gefaald is (tot 3x)
+        // Gebruik hard gecodeerde configuratie na 3 keer.
 
         function getConf(callback, failCallback, counter) {
 
@@ -70,7 +70,7 @@
             return null;
         }
 
-        // add fixed configuration to config file
+        // Voeg hard gecodeerde apps aan de config toe
 
         local.addFixedToConf = function (conf) {
             //console.log(conf);
@@ -82,8 +82,9 @@
             return conf;
         };
 
-        // add fixed apps to configuration (eg. recorder for speech recognition)C
-        // save currrent config in localstorage and fire callback of initial function
+
+        // Voeg hard gecodeerde apps toe aan de config (bv. recorder voor spraakherkenning)
+        // Sla config op in de localstorage en voor de callback functie uit
 
         local.setConfig = function (conf, callback) {
             sConf = local.addFixedToConf(conf);
@@ -97,11 +98,10 @@
             callback(sConf);
         }
 
-        // get localstorage config if present
-        // check if localstorage config is still valid (expire_date)
-        // if expired or not present --> call loadNewConfig function
-        // if not expired --> load local file and call setConfig function
-
+        // Haal de localstorage config op indien aanwezig
+        // Check of de localstorage nog geldig is (vervaldatum)
+        // indien vervallen --> roep loadNewConfig functie op
+        // Indien niet vervallen --> laad locale configuratie file op en roep de setConfig functie op
 
         local.getConf = function (callback, failCallback) {
             var temp;
@@ -126,7 +126,7 @@
             }
         }
 
-        // put server config in local config
+        // stel config samen om lokaal op te slaan
 
         local.makeConfig = function (data, callback) {
             var conf = {};
@@ -138,8 +138,8 @@
             local.setConfig(conf, callback);
         }
 
-        // set up request
-        // request new config through dataService
+        // request opzetten
+        // vraag nieuwe config op via dataService
 
         local.loadNewConfig = function (callback, failCallback) {
             conf = localStorage.getItem("mirror_conf");

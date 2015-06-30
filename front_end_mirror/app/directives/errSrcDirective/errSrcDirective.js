@@ -1,4 +1,5 @@
 ﻿(function () {
+    // directive dat afbeeldings errors opvangt en ervoor zorgt dat de afbeelding geen lelijke standaardafbeelding wordt door het display attribuut op none te zetten.
     angular.module("mirrorApp").directive('myErrSrc', function () {
         return {
             scope:{

@@ -1,4 +1,6 @@
 (function () {
+
+    // Service om data op te halen.
     angular.module('mirrorApp').factory('dataService', ['$http', function ($http) {
         var local = {};
         var service = {
@@ -8,6 +10,7 @@
             getUrlFromRSS: getUrlFromRSS
         };
 
+        // http get request
         function getData(sSource, callback, errCallback, extraData) {
             $http.get(encodeURI(sSource)).success(function (data, status, headers, config) {
                 if (callback)
@@ -18,6 +21,7 @@
             });
         };
 
+        // http post request
         function postData(sSource, indata, callback, errCallback) {
             $http.post(encodeURI(sSource), indata).success(function (data, status, headers, config) {
                 if (callback)
@@ -28,6 +32,7 @@
             });
         };
 
+        // http request (alles mogelijk)
         function postData(request, callback, errCallback) {
             $http(request).success(function (data, status, headers, config) {
                 if (callback)
@@ -38,6 +43,7 @@
             });
         };
 
+        // get XML en zet het om naar JSON (feedToJson plugin nodig)
         function getJSONFromXML(source, callback, errCallback) {
             $.feedToJson({
                 feed: source,
@@ -52,11 +58,15 @@
             });
         };       
 
+        // functie dat naar een URL zoekt in een RSS item
         function getUrlFromRSS(item) {
+
+            // JSON item naar string omzetten om dan te kunnen zoeken naar afbeelding extensies via stringfuncties
             var item = JSON.stringify(item);
             var counter = local.extensionLib.length - 1;
             var val;
-
+            
+            // Overloop alle waarden van het item en kijk of eenvan de extensies erin zit
             while (!val && counter >= 0) {
                 if (item.indexOf(local.extensionLib[counter]) != -1)
                     val = local.getUrlFromPosition(item, local.extensionLib[counter])
@@ -69,6 +79,7 @@
 
         local.extensionLib = [".jpg", ".png", ".gif", ".jpeg", ".tiff", ".svg"]
 
+        // Indien er geverifieerd is dat er een afbeelding aanwezig is, wordt er gezocht naar de string van de afbeelding.
         local.getUrlFromPosition = function (item, type) {
             var index = item.indexOf(type);
             var endIndex = index + type.length;

@@ -6,6 +6,7 @@
             getToken: getToken
         };
 
+        // Auhtenticeer de spiegel met de server en haal een token op.
         function auth(callback) {
             dataService.postData(local.req, function (data) {
                 localStorage.setItem("AI", JSON.stringify(data));
@@ -13,6 +14,7 @@
             }, callback);
         };
 
+        // haal het lokale token op
         function getToken() {
             var info = JSON.parse(localStorage.getItem("AI"));
             if (local.checkAuhtInfo(info))
@@ -21,6 +23,7 @@
                 return null;
         };
 
+        // check of het token die lokaal staat nog geldig is
         local.checkAuhtInfo = function (info) {
             if (info && info.access_token && info[".expires"]) {
                 var date = new Date(info[".expires"]);
@@ -37,6 +40,8 @@
             }
         }
 
+
+        // request object om token aan te vragen.
         local.req = {
             method: 'POST',
             url: 'http://apimate.azurewebsites.net/Token',

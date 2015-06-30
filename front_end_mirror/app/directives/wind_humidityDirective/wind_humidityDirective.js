@@ -1,4 +1,5 @@
 (function () {
+    // achteraf vervangen door expressies
     angular.module('mirrorApp').directive('myHw', [function () {
         return {
             restrict: 'E',
