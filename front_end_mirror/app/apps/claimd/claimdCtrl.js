@@ -36,10 +36,10 @@
             var newData = JSON.parse(app.Data);
 
             if (!(app.Data === JSON.stringify($scope.app.Data))) {
-                $scope.app.Data.URL = newData.URL;               
+                $scope.app.Data.URL = newData.URL;
                 getNews();
             }
-        }
+        };
 
         getNews();
     }]);

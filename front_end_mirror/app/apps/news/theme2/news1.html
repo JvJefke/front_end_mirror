@@ -1,8 +1,8 @@
-<link rel="stylesheet" type="text/css" href="./app/apps/news/theme2/news1.css">
+<link rel="stylesheet" type="text/css" href="./app/apps/news/theme2/news0.css">
 
-<div class="news" ng-app="mirrorApp" ng-controller="newsCtrl" ng-show="showAll">
+<div class="news" ng-app="mirrorApp" ng-controller="newsCtrl" ng-show="showAll">    
     <div class="fade" id="fade_top"></div>
-    <div class="news_els_container" my-automatic-scroll="scrollInterval">
+    <div class="news_els_container" my-automatic-scroll="-5000">
         <div class="news_scroll_container">
             <div class="news_column" ng-repeat="column in columns">
                 <div class="news_container" ng-repeat="newsItem in column" ng-if="newsItem!=undefined">
@@ -15,7 +15,5 @@
     <div class="fade" id="fade_bottom"></div>
 </div>
 
-<script src="./app/apps/news/theme2/newsScrollDirective/newsScrollDirective.js"></script>
-<script src="./app/apps/news/newsImgDirective/newsImgDirective.js"></script>
-<script src="./app/apps/news/newsService.js"></script>
-<script src="./app/apps/news/theme2/newsCtrl.js"></script>
+<script src="./app/apps/news/min/news.min.js"></script>
+<script src="./app/apps/news/theme2/min/news_theme2.min.js"></script>

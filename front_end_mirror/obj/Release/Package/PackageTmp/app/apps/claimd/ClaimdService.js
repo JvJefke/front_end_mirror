@@ -27,24 +27,24 @@
             var retTemp = [];
             for (var i = 0; i < aantal; i++) {
                 var item = newsItems[counter + i];
-                if(item)
+                if (item)
                     retTemp.push(item);
             }
 
             return retTemp;
-        }
+        };
 
         function splitNewsInColumns(arr, aantal) {
             var returnArr = [];
             for (var i = 0; i < arr.length ; i += aantal) {
                 for (var ii = 0; ii < aantal; ii++) {
-                    if (!returnArr[ii]) 
+                    if (!returnArr[ii])
                         returnArr.push([]);
                     returnArr[ii].push(arr[i + ii]);
                 }
             }
             return returnArr;
-        }
+        };
 
         local.mainErrCallback = function (data, status, headers, config) {
             console.log("There has been an error while retrieving data", data, status, headers, config);

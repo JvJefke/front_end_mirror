@@ -1,4 +1,7 @@
 (function () {
+
+    // Deze service dient om spraak te genereren
+
     angular.module('mirrorApp').factory('talkService', [function (speechService, $rootScope) {
         var service = {};
         var local = {};
@@ -59,6 +62,8 @@
             audio.load();        
             audio.play();*/
 
+            // Er wordt een event gestuurt naar de parent (de localhost website die deze website draaid via een iFrame) met een object dat een voice object bevat
+            // dit object stuurt de localhost door via een socket naar de node.js server.
             window.parent.postMessage({ voice: { value: val } }, "http://localhost:3333");
 
         };

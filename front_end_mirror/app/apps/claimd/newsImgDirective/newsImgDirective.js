@@ -10,6 +10,6 @@
                 else
                     element.attr("src", img);
             }
-        }
+        };
     }]);
 })();

@@ -24,7 +24,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-gulp.task('lint', function () {
+gulp.task('lint', ['clean'], function () {
     return gulp.src([
         'app/**/*.js'
     ])
@@ -32,7 +32,7 @@ gulp.task('lint', function () {
         .pipe(jshint.reporter('default'));
 });
 
-gulp.task("main_a_script", function () {
+gulp.task("main_a_script", ['clean'], function () {
     return gulp.src([
         'app/app.js',
         'app/services/*.js',
@@ -46,22 +46,22 @@ gulp.task("main_a_script", function () {
         .pipe(gulp.dest('js/'));
 });
 
-gulp.task("app_scripts", function () {
+gulp.task("app_scripts", ['clean'], function () {
     var folders = getFolders(app_path);
 
     var tasks = folders.map(function (folder) {
-        return gulp.src([path.join(app_path, folder, '/**/*.js'), '!' + app_path + '/**/theme*/*.js'])
+        return gulp.src([path.join(app_path, folder, '/**/*.js'), '!' + app_path + '/**/theme*/**/*.js', '!' + app_path + '/**/min/*.js'])
             .pipe(concat(folder + '.gen.js'))
-            .pipe(gulp.dest(path.join(app_path, folder)))
+            .pipe(gulp.dest(path.join(app_path, folder, "min")))
             .pipe(rename(folder + '.min.js'))
             .pipe(uglify())
-            .pipe(gulp.dest(path.join(app_path, folder)));
+            .pipe(gulp.dest(path.join(app_path, folder, "min")));
     });
 
     return merge(tasks);
 });
 
-gulp.task("app_theme_scripts", function () {
+gulp.task("app_theme_scripts", ['clean'], function () {
     var folders = getFolders(app_path);
     
 
@@ -74,10 +74,10 @@ gulp.task("app_theme_scripts", function () {
         var subtasks = subfolders.map(function(subfolder){
             return gulp.src([path.join(app_path, folder, subfolder, '*.js')])
             .pipe(concat(folder + '_' + subfolder + '.gen.js'))
-            .pipe(gulp.dest(path.join(app_path, folder, subfolder)))
+            .pipe(gulp.dest(path.join(app_path, folder, subfolder, "min")))
             .pipe(uglify())
             .pipe(rename(folder + '_' + subfolder + '.min.js'))
-            .pipe(gulp.dest(path.join(app_path, folder, subfolder)));
+            .pipe(gulp.dest(path.join(app_path, folder, subfolder, "min")));
         });
         
         return es.concat.apply(null, subtasks);
@@ -87,7 +87,7 @@ gulp.task("app_theme_scripts", function () {
 })
 
 // Concatenate & Minify JS
-gulp.task('script', function () {
+gulp.task('script', ['clean'], function () {
     return gulp.src([
         'js/dev/jquery-1.11.2.min.js',
         'js/dev/microphone.min.js',
@@ -106,4 +106,4 @@ gulp.task('script', function () {
 //});
 
 // Default Task
-gulp.task('default', ['main_a_script', 'script', 'app_theme_scripts', 'app_scripts']);
+gulp.task('default', ['clean', 'main_a_script', 'script', 'app_theme_scripts', 'app_scripts']);
